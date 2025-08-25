@@ -43,7 +43,7 @@ As mentioned in [principles](https://github.com/ipo-exe/flare/blob/main/docs/pri
 '0P34' = 0.34
 ```
 
-> See the Flags documentation
+> See the [Flags](https://github.com/ipo-exe/flare/blob/main/docs/flags.md) documentation.
 
 ---
 
