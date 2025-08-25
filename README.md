@@ -1,11 +1,13 @@
 # FLARE
 
-**Flare** — *Formatting Labels for Archive and Retrieval Efficiency* — is a lightweight, text-based system for creating and managing standardized labels.  
+**Flare** — *Formatting Labels for Archive and Retrieval Efficiency* — is a lightweight, text-based system for creating and managing standardized labels. 
+
 It provides conventions, notations and nomenclature for labeling files, layers, columns, and other assets, making them easier to organize, archive, and retrieve.
 
 ## Contents
 
 - [Principles](https://github.com/ipo-exe/flare/blob/main/docs/principles.md)
+- [Concepts](https://github.com/ipo-exe/flare/blob/main/docs/concepts.md)
 - [Flags](https://github.com/ipo-exe/flare/blob/main/docs/flags.md)
 - [Numbers](https://github.com/ipo-exe/flare/blob/main/docs/numbers.md)
 - [Date and Time](https://github.com/ipo-exe/flare/blob/main/docs/datetime.md)
