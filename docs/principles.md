@@ -12,6 +12,7 @@ These principles ensure that labels are **robust, consistent, human-readable, an
 | Hierarchy and separators | `_` = primary separator, `-` = secondary, character flags for edge cases | `temperature_36P5_celsius`               |
 | Case-insensitive         | Casing has no effect; all labels are parsed as lowercase                  | `DATASET_V2` ≡ `dataset_v2` ≡ `Dataset_V2` |
 
+> See the [Concepts](https://github.com/ipo-exe/flare/blob/main/docs/concepts.md) documentation.
 
 ---
 
