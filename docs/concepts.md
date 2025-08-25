@@ -107,11 +107,3 @@ Statistics:
 Variables are a central concept in Flare, and standard names play a key role in making them consistent and easily interpretable. Each variable is associated with a **topic**, which represents the kind of information it carries, whether **quantitative** (numeric measures) or **qualitative** (categorical information). Standard names can include suggested **data types** for storing the variable in fields or files, ensuring that datasets are created and encoded consistently across projects. 
 
 Flare also allows **compact modes for data types**: for example, numeric values can be stored as integers together with a **multiplier**. The multiplier enables efficient storage while preserving the actual value range, since the stored integer can be divided by the multiplier to reconstruct the original value. This approach provides a structured and standardized way to encode variables, making them machine-actionable while maintaining clarity and portability in labels.
-
-
-
-
-
-
-## Layers
-
