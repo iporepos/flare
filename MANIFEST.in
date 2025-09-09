@@ -1,0 +1,4 @@
+include README.md       # Include README
+include LICENSE         # Include LICENSE
+recursive-include docs *  # Include all docs
+# recursive-include examples *  # Uncomment to include example scripts

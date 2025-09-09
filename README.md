@@ -23,13 +23,20 @@ It provides conventions, notations and nomenclature for labeling files, layers, 
 
 ## Repository structure
 
-```bash
+```text
 flare/
-├── docs/          # Markdown documentation
-├── flare/         # Python modules supporting Flare
-├── examples/      # Sample use cases and label sets
-├── tests/         # Tests for Python modules
-└── README.md      # This file
+|
+├── LICENSE
+├── README.md
+├── .gitignore
+├── pyproject.toml             # metadata and specs of lib
+├── MANIFEST.in                # extra files for source distribution
+|
+├── src/                       # source code folder
+│    └── flare/                # library
+├── tests/                     # testing scripts
+├── docs/                      # documentation resources
+└── examples/                  # learning resources              
 ```
 
 ---

@@ -1,0 +1,14 @@
+[project]
+name = "flare"
+version = "0.0.1"
+description = "A system of conventions, notations and nomenclature for labeling files, columns and other assets. "
+readme = "README.md"
+license = { file = "LICENSE" }  # Points to your GPLv3 file
+requires-python = ">=3.12"
+dependencies = []
+
+[project.urls]
+"Homepage" = "https://github.com/ipo-exe/flare"
+
+[tool.setuptools.packages.find]
+where = ["src"]
