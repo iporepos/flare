@@ -47,31 +47,24 @@ readme = "README.md"  # <- Used for PyPI display and documentation
 # Authors (list of dicts)
 # Here we use 'url' instead of email to avoid publishing email addresses
 authors = [
-    { name = "Iporã Possantti", url = "https://github.com/iporepos" },
-    # add more authors if needed
+    { name = "Iporã Possantti"},
+    # add more authors if needed. include email if needed: email = "myemail@org"
 ]
 # Maintainers (optional)
 # Can include multiple people responsible for maintaining the project
 maintainers = [
-    { name = "Iporã Possantti", url = "https://github.com/iporepos" },
-    # add more maintainers if needed
+    { name = "Iporã Possantti"},
+    # add more maintainers if needed. include email if needed: email = "myemail@org"
 ]
 # License information
 # 'text' is the SPDX license identifier
-license = { text = "GPL-3.0-or-later" }
+license = "GPL-3.0-or-later"
 # Point to license files in the root of the project
 license-files = ["LICENSE"] # <- license file in your project root
 
 # --------------------------
 # SPECS
 # --------------------------
-# Classifiers (PyPI standard metadata)
-# These help categorize your project and indicate compatibility
-classifiers = [
-    "Programming Language :: Python :: 3", # Compatible with Python 3
-    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",  # License info
-    "Operating System :: OS Independent" # Cross-platform
-]
 # Minimum required Python version
 requires-python = ">=3.10"  # <- Python 3.10 or higher
 
