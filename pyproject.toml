@@ -1,20 +1,141 @@
+# =====================================================
+# BUILT SYSTEM CONFIG
+# =====================================================
+[build-system]
+
+# 'requires' lists the packages that are needed to build your project
+# These are only needed at build time, not when running your package
+# Default values are fine for most projects
+requires = [
+    "setuptools>=65.0",  # Standard Python packaging tool
+    "wheel"              # Required to build wheel distributions (.whl)
+]
+
+# 'build-backend' tells pip or other tools which system to use to build your project
+# setuptools.build_meta is the default and works for almost all projects
+# Other options exist (e.g., flit.buildapi, poetry.core.masonry.api) if you use alternative build tools
+build-backend = "setuptools.build_meta"
+
+# Notes:
+# - This section is mandatory for PEP 518 compliance.
+# - It does not affect runtime dependencies or optional extras.
+# - Safe to leave as-is unless you are using a non-standard build system.
+
+
+# =====================================================
+# PROJECT METADATA
+# =====================================================
 [project]
-name = "flare"
-version = "0.0.1"
-description = "A system of conventions, notations and nomenclature for labeling files, columns and other assets. "
+
+# --------------------------
+# BASIC
+# --------------------------
+# The name of your package/project
+name = "flare"  # <- Replace with your project name
+# Version number
+version = "0.0.1" # <- Set version
+# Short description
+description = "A system of conventions, notations and nomenclature for labeling files, columns and other assets."
+# Keywords (optional) for search on PyPI
+keywords = ["python", "flare", "notation", "labels", "standards"]
+
+# --------------------------
+# CREDITS AND DOCS
+# --------------------------
+# Path to your README file
+readme = "README.md"  # <- Used for PyPI display and documentation
+# Authors (list of dicts)
+# Here we use 'url' instead of email to avoid publishing email addresses
 authors = [
-  {name = "Iporã Possantti", url = "https://github.com/iporepo"},
+    { name = "Iporã Possantti", url = "https://github.com/iporepos" },
+    # add more authors if needed
 ]
+# Maintainers (optional)
+# Can include multiple people responsible for maintaining the project
 maintainers = [
-  {name = "Iporã Possantti", url = "https://github.com/iporepo"}
+    { name = "Iporã Possantti", url = "https://github.com/iporepos" },
+    # add more maintainers if needed
 ]
-readme = {file = "README.md"}
-license = {file = "LICENSE"}  # Points to your GPLv3 file
-requires-python = ">=3.12"
-dependencies = []
+# License information
+# 'text' is the SPDX license identifier
+license = { text = "GPL-3.0-or-later" }
+# Point to license files in the root of the project
+license-files = ["LICENSE"] # <- license file in your project root
 
+# --------------------------
+# SPECS
+# --------------------------
+# Classifiers (PyPI standard metadata)
+# These help categorize your project and indicate compatibility
+classifiers = [
+    "Programming Language :: Python :: 3", # Compatible with Python 3
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",  # License info
+    "Operating System :: OS Independent" # Cross-platform
+]
+# Minimum required Python version
+requires-python = ">=3.10"  # <- Python 3.10 or higher
+
+
+# --------------------------
+# DEPENDENCIES
+# --------------------------
+# For local installation, Run: 
+# >>> pip install -e ".[dev,docs]"
+
+# ---------------------------
+# Runtime dependencies
+# ---------------------------
+# These are the packages your project needs to run
+# Installed automatically when someone installs your package
+dependencies = [
+    "numpy", # Example: numerical computations
+    "pandas", # Example: data manipulation
+# "my-package @ git+https://github.com/username/my-package.git@main"  
+# <- Example of a custom dependency from GitHub
+]
+
+# ---------------------------
+# Optional dependencies
+# ---------------------------
+# These are extra groups you can install manually, for example:
+# - dev: development tools (testing, linting, formatting)
+# - docs: documentation tools
+[project.optional-dependencies]
+
+# Development dependencies (install with `pip install -e ".[dev]"`)
+dev = [
+#   "pytest>=8.0", # Testing framework
+    "black",       # Code formatting
+#   "flake8",      # Linting
+]
+
+# Documentation dependencies (install with `pip install -e ".[docs]"`)
+docs = [
+    "sphinx",                       # Documentation generator
+    "sphinx-autodoc-typehints",     # Include Python type hints in docs
+    "sphinx-rtd-theme",             # A nice Sphinx theme
+    "sphinx_copybutton",            # A nice feature for code blocks
+]
+
+# ---------------------------
+# Notes
+# ---------------------------
+# - Runtime dependencies are installed automatically on 'pip install -e .'
+# - Optional dependencies must be installed explicitly via extras
+# - Use version ranges to avoid conflicts (e.g., pandas requires a specific numpy version)
+# - Custom dependencies can be installed from GitHub using the @ git+ URL syntax
+
+# --------------------------
+# URLS
+# --------------------------
 [project.urls]
-"Homepage" = "https://github.com/iporepo/flare"
+"Homepage" = "https://github.com/iporepos/flare"
 
+
+# =====================================================
+# SETUPTOOLS
+# =====================================================
 [tool.setuptools.packages.find]
-where = ["src"]
+where = ["src"]  # <- Tell setuptools to look for packages in /src
+
+```
