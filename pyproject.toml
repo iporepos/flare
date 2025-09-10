@@ -137,5 +137,3 @@ docs = [
 # =====================================================
 [tool.setuptools.packages.find]
 where = ["src"]  # <- Tell setuptools to look for packages in /src
-
-```
