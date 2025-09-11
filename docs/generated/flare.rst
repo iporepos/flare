@@ -1,0 +1,6 @@
+﻿flare
+=====
+
+.. automodule:: flare
+
+   
