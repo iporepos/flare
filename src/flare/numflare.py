@@ -1,34 +1,59 @@
 """
-numbers.py
------------------
+numflare.py
+----------
 
-# todo [major docstring improvement] -- heading
-{One sentence module description}
+Core utilities for encoding and decoding numbers in Flare labels, including integers,
+fractions, sign flags, and magnitude multipliers.
 
-# todo [major docstring improvement] -- main features
 Main features:
- - {feature 1}
- - {feature 2}
- - {feature 3}
- - {etc}
+ - Encode numeric values into compact, human-readable strings
+ - Decode previously encoded numbers back into floats
+ - Handle latitude/longitude sign flags (`n`, `s`, `e`, `w`)
+ - Optional magnitude suffixes (`d`, `c`, `k`, `m`, `b`)
 
 Overview
 --------
 
-# todo [major docstring improvement] -- overview
-Mauris gravida ex quam, in porttitor lacus lobortis vitae.
-In a lacinia nisl. Pellentesque habitant morbi tristique senectus
-et netus et malesuada fames ac turpis egestas.
+This module provides a structured, text-based representation of numbers that is
+consistent, sortable, and machine-actionable. It supports integers, real numbers
+with decimal fractions, optional directional signs, and optional magnitude multipliers.
+For full conceptual details, refer to the Flare documentation on **Numbers**.
 
 Examples
 --------
 
-# todo [major docstring improvement] -- examples
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Nulla mollis tincidunt erat eget iaculis. Mauris gravida ex quam,
-in porttitor lacus lobortis vitae. In a lacinia nisl.
+Encoding a number
+
+
+.. code-block:: python
+
+    # Encode a negative latitude with decimals and minimum length
+    encoded_lat = encode_number(-12.3, decimals=1, len_min=4, is_latitude=True)
+    print(encoded_lat)
+    # Output: 's0012p3'
+
+
+Decoding a number
+
+.. code-block:: python
+
+    # Decode an encoded number
+    decoded_lat = decode_number("s0012p3")
+    print(decoded_lat)
+    # Output: -12.3
+
+Magnitude feature
+
+.. code-block:: python
+
+    # Encode a number with magnitude
+    encoded_mag = encode_number(2500, decimals=0, len_min=2, collapse_magnitude=True)
+    print(encoded_mag)
+    # Output: 'n25k'
+
 
 """
+
 # --------------- imports ---------------
 # import modules from other libs
 

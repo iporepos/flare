@@ -1,3 +1,31 @@
+# ===================================================
+# LOCAL IGNORES
+# ===================================================
+
+# ----- Files -----
+# bench files
+bench*.py
+# left-double files (convention for deprecated files)
+__*.*
+
+# ----- Folders -----
+
+# Tests
+# any subfolder in data/ is ignored
+tests/data/*/
+# outputs folder is fully ignored
+tests/outputs/
+
+# Non-sense folders
+extra/
+misc/
+scripts/
+old/
+
+# ===================================================
+# GITHUB STANDARD IGNORES
+# ===================================================
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -70,6 +98,7 @@ instance/
 
 # Sphinx documentation
 docs/_build/
+docs/build/
 
 # PyBuilder
 .pybuilder/
@@ -206,6 +235,4 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
-# ignoring nomenaclature
-_*
-bench*.py
+
