@@ -1,28 +1,27 @@
 """
-{pythonmodule.py}
------------------
+One sentence module description
+todo [major docstring improvement]
 
-# todo [major docstring improvement] -- heading
-{One sentence module description}
 
-# todo [major docstring improvement] -- main features
-Main features:
+Features
+--------
+todo [major docstring improvement]
+
  - {feature 1}
  - {feature 2}
  - {feature 3}
  - {etc}
+
 Overview
 --------
-
-# todo [major docstring improvement] -- overview
+todo [major docstring improvement] -- overview
 Mauris gravida ex quam, in porttitor lacus lobortis vitae.
 In a lacinia nisl. Pellentesque habitant morbi tristique senectus
 et netus et malesuada fames ac turpis egestas.
 
 Examples
 --------
-
-# todo [major docstring improvement] -- examples
+todo [major docstring improvement] -- examples
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 Nulla mollis tincidunt erat eget iaculis. Mauris gravida ex quam,
 in porttitor lacus lobortis vitae. In a lacinia nisl.
@@ -68,15 +67,18 @@ RUN_BENCHMARKS_XXL = os.getenv("RUN_BENCHMARKS_XXL", "0") == "1"
 # ---- public ----
 
 def testprint(s):
-    print(f"{REPO_NAME} -- tests >>> {s}")
-    return None
+    # todo docstring
+    s2 = f"{REPO_NAME} -- tests >>> {s}".lower()
+    return s2
 
 def make_output():
+    # todo docstring
     testprint("making output dir")
     os.mkdirs(OUTPUT_DIR, exist_ok=True)
     return None
 
 def make_numbers_data():
+    # todo docstring
     testprint("making numbers data")
     if not os.path.isfile(DATA_NUMBERS_FILE):
         v = np.random.randint(low=10, high=100, size=100)
@@ -95,10 +97,17 @@ def make_numbers_data():
         testprint("data already available")
     return None
 
+
 def load_numbers_data():
+    # todo docstring
     testprint("loading numbers data")
     df = pd.read_csv(DATA_NUMBERS_FILE, sep=";")
     return df
+
+def download_dataset(name, url):
+    # todo docstring
+    testprint(f"downloading dataset {name} from {url}")
+    return None, None
 
 # ---- private ----
 

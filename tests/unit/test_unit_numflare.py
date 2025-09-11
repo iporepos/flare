@@ -1,16 +1,17 @@
 """
-test_numflare.py
------------------
+Short description of the module's purpose in 1–2 sentences.
+todo improve major docstring
 
-# todo [major docstring improvement] -- heading
-{One sentence module description}
+Features
+--------
+todo improve major docstring
+- Feature 1 or key module
+- Feature 2 or key module
+- Feature 3 (optional)
 
-# todo [major docstring improvement] -- main features
-Main features:
- - {feature 1}
- - {feature 2}
- - {feature 3}
- - {etc}
+Examples
+--------
+todo improve major docstring
 
 """
 # --------------- imports ---------------
@@ -52,7 +53,9 @@ class TestFlareNumbers(unittest.TestCase):
 
     '''
     def setUp(self):
-        """Runs before each test method."""
+        """
+        Runs before each test method.
+        """
         #conftest.testprint(f"setting up {type(self).__name__}")
         return None
     '''
@@ -61,7 +64,7 @@ class TestFlareNumbers(unittest.TestCase):
         """
         Test encoding and decoding of plain integers without magnitude or decimals.
         """
-        conftest.testprint("testing simple integers")
+        print(conftest.testprint("simple integers"))
         numbers = self.data["v1"].values
         for n in numbers:
             encoded = encode_number(n, decimals=0, len_min=1, collapse_magnitude=False)
@@ -72,7 +75,7 @@ class TestFlareNumbers(unittest.TestCase):
         """
         Test encoding and decoding of numbers with decimal fractions.
         """
-        conftest.testprint("testing decimals")
+        print(conftest.testprint("decimals"))
         numbers = self.data["v3"].round(2).values
         for n in numbers:
             encoded = encode_number(n, decimals=2, len_min=1, collapse_magnitude=False)
@@ -83,7 +86,7 @@ class TestFlareNumbers(unittest.TestCase):
         """
         Test that sign flags for latitude/longitude are handled correctly.
         """
-        conftest.testprint("testing sign flag")
+        print(conftest.testprint("sign flag"))
         # Example: negative latitude = 's', positive longitude = 'e'
         encoded = encode_number(-23, decimals=0, is_latitude=True)
         self.assertTrue(encoded.startswith('s'))
@@ -94,7 +97,7 @@ class TestFlareNumbers(unittest.TestCase):
         """
         Test decoding of specific known encoded strings.
         """
-        conftest.testprint("testing decoding")
+        print(conftest.testprint("decoding"))
         known_pairs = [
             ("n002p3", 2.3),
             ("s023p4", -23.4),
