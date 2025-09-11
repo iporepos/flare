@@ -1,12 +1,14 @@
-.. image:: figs/logo.png
+.. figure:: figs/logo.png
     :width: 150 px
-    :align: left
+    :align: center
     :alt: Logo
 
---------------------------------------------
+----
 
-Welcome to ``flare`` documentation page!
+Flare
 ############################################
+
+Welcome to ``flare`` documentation!
 
 .. warning::
 

@@ -107,7 +107,8 @@ docs = [
     "sphinx",                       # Documentation generator
     "sphinx-autodoc-typehints",     # Include Python type hints in docs
     "sphinx-rtd-theme",             # A nice Sphinx theme
-    "sphinx_copybutton",            # A nice feature for code blocks
+    "pydata-sphinx-theme",          # A nice Sphinx theme
+    "sphinx_copybutton",            # A nice Sphinx feature for code blocks
 ]
 
 # ---------------------------

@@ -1,11 +1,3 @@
-.. image:: figs/logo.png
-    :width: 150 px
-    :align: left
-    :alt: Logo
-
---------------------------------------------
-
-
 API Reference
 ############################################
 
@@ -16,7 +8,6 @@ in porttitor lacus lobortis vitae. In a lacinia nisl.
 .. note::
 
     This API reference is under active development
-
 
 
 .. autosummary::

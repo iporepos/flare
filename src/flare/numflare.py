@@ -1,11 +1,9 @@
 """
-numflare.py
-----------
-
 Core utilities for encoding and decoding numbers in Flare labels, including integers,
-fractions, sign flags, and magnitude multipliers.
+fractions, sign flags and magnitude multipliers.
 
-Main features:
+Features
+--------
  - Encode numeric values into compact, human-readable strings
  - Decode previously encoded numbers back into floats
  - Handle latitude/longitude sign flags (`n`, `s`, `e`, `w`)

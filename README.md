@@ -33,13 +33,11 @@ It provides conventions, notations and nomenclature for labeling files, layers, 
 
 ```bash
 flare/
-|
 ├── LICENSE
 ├── README.md
 ├── .gitignore
 ├── pyproject.toml             # metadata and specs of lib
 ├── MANIFEST.in                # extra files for source distribution
-|
 ├── src/                       # source code folder
 │    └── flare/                # library
 ├── tests/                     # testing routines
