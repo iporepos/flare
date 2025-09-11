@@ -1,3 +1,11 @@
+![License](https://img.shields.io/github/license/iporepos/flare) 
+![Top Language](https://img.shields.io/github/languages/top/iporepos/flare)
+
+<a logo>
+<img src="https://raw.githubusercontent.com/iporepos/flare/master/docs/figs/logo.png" height="130" width="130">
+</a>
+
+---
 # FLARE
 
 **Flare** — *Formatting Labels for Archive and Retrieval Efficiency* — is a lightweight, text-based system for creating and managing standardized labels. 
@@ -23,7 +31,7 @@ It provides conventions, notations and nomenclature for labeling files, layers, 
 
 ## Repository structure
 
-```text
+```bash
 flare/
 |
 ├── LICENSE
@@ -34,8 +42,8 @@ flare/
 |
 ├── src/                       # source code folder
 │    └── flare/                # library
-├── tests/                     # testing scripts
-├── docs/                      # documentation resources
+├── tests/                     # testing routines
+├── docs/                      # documentation
 └── examples/                  # learning resources              
 ```
 
