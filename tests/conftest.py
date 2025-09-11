@@ -1,11 +1,10 @@
 """
-One sentence module description
-todo [major docstring improvement]
-
+{Short module description (1-3 sentences)}
+todo docstring
 
 Features
 --------
-todo [major docstring improvement]
+todo docstring
 
  - {feature 1}
  - {feature 2}
@@ -14,57 +13,91 @@ todo [major docstring improvement]
 
 Overview
 --------
-todo [major docstring improvement] -- overview
-Mauris gravida ex quam, in porttitor lacus lobortis vitae.
-In a lacinia nisl. Pellentesque habitant morbi tristique senectus
-et netus et malesuada fames ac turpis egestas.
+todo docstring
+{Overview description}
 
 Examples
 --------
-todo [major docstring improvement] -- examples
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Nulla mollis tincidunt erat eget iaculis. Mauris gravida ex quam,
-in porttitor lacus lobortis vitae. In a lacinia nisl.
+todo docstring
+
+Print a message
+
+.. code-block:: python
+
+    # print message
+    print("Hello world!")
+    # [Output] >> 'Hello world!'
+
 
 """
-# --------------- imports ---------------
+# ***********************************************************************
+# IMPORTS
+# ***********************************************************************
 # import modules from other libs
 
-# ---- native imports ----
+
+# Native imports
+# =======================================================================
 import os
 from pathlib import Path
 
-# ---- external imports ----
+
+# External imports
+# =======================================================================
 import numpy as np
 import pandas as pd
 
-# ---- project imports ----
-# fill [project imports]
 
-# --------------- constants ---------------
-# ---- public ----
+# Project-level imports
+# =======================================================================
+# import {module}
 
-# paths and files
-# -------------------------------
+
+
+# ***********************************************************************
+# CONSTANTS
+# ***********************************************************************
+# define constants in uppercase
+
+
+# Project-level
+# =======================================================================
+
+# Paths
+# -----------------------------------------------------------------------
 BASE_DIR = Path(__file__).parent
-REPO_NAME = os.path.basename(Path(BASE_DIR).parent)
+
 DATA_DIR = BASE_DIR / "data"
 OUTPUT_DIR = BASE_DIR / "outputs"
-# Example constant
+
+# Files
+# -----------------------------------------------------------------------
 DATA_NUMBERS_FILE = DATA_DIR / "test_numbers.csv"
 
-# benchmark config
-# -------------------------------
+# Names
+# -----------------------------------------------------------------------
+REPO_NAME = os.path.basename(Path(BASE_DIR).parent)
+
+# Benchmark tests
+# -----------------------------------------------------------------------
 # Read environment variable, default to "0" (false)
 RUN_BENCHMARKS = os.getenv("RUN_BENCHMARKS", "0") == "1"
 # Read environment variable, default to "0" (false)
 RUN_BENCHMARKS_XXL = os.getenv("RUN_BENCHMARKS_XXL", "0") == "1"
 
-# ---- private ----
+
+# Module-level
+# =======================================================================
+# {develop}
 
 
-# --------------- functions ---------------
-# ---- public ----
+# ***********************************************************************
+# FUNCTIONS
+# ***********************************************************************
+
+
+# Project-level
+# =======================================================================
 
 def testprint(s):
     # todo docstring
@@ -104,21 +137,69 @@ def load_numbers_data():
     df = pd.read_csv(DATA_NUMBERS_FILE, sep=";")
     return df
 
-def download_dataset(name, url):
+def download_dataset(name, url, overwrite=True):
     # todo docstring
     testprint(f"downloading dataset {name} from {url}")
-    return None, None
+    # setup paths
+    dataset_path = DATA_DIR / name
+    zip_path = DATA_DIR / f"{name}.zip"
 
-# ---- private ----
+    # Download zip (handles URL/network errors)
+    download_zip(url, zip_path)
+
+    # Extract and cleanup
+    extract_and_cleanup(zip_path, dataset_path, overwrite=overwrite)
+
+    return dataset_path
+
+# Module-level
+# =======================================================================
+
+def download_zip(url, zip_path):
+    # todo docstring
+    try:
+        print(testprint(f"downloading dataset from {url}..."))
+        response = requests.get(url, stream=True, timeout=30)
+        response.raise_for_status()  # Raises HTTPError for bad HTTP responses
+    except requests.exceptions.RequestException as e:
+        raise DatasetDownloadError(f"Failed to download dataset from {url}: {e}")
+
+    with open(target_path, "wb") as f:
+        for chunk in response.iter_content(chunk_size=8192):
+            f.write(chunk)
+    print(testprint(f"saved zip to {target_path}"))
+    return None
 
 
-# --------------- classes ---------------
-# ---- public ----
-# ---- private ----
 
+# ***********************************************************************
+# CLASSES
+# ***********************************************************************
 
-# --------------- script ---------------
+# Project-level
+# =======================================================================
+# {develop}
+
+# Module-level
+# =======================================================================
+
+class DatasetDownloadError(Exception):
+    """
+    Custom exception for dataset download issues.
+    """
+    pass
+
+# ***********************************************************************
+# SCRIPT
+# ***********************************************************************
 # standalone behaviour as a script
+
 if __name__ == "__main__":
+
+    # Script section
+    # ===================================================================
     testprint("conftest.py")
     make_numbers_data()
+
+    # Script subsection
+    # -------------------------------------------------------------------

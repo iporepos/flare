@@ -22,7 +22,6 @@ Examples
 
 Encoding a number
 
-
 .. code-block:: python
 
     # Encode a negative latitude with decimals and minimum length
