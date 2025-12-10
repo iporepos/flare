@@ -16,8 +16,8 @@ Contents
    :maxdepth: 1
 
    Home <self>
-   about
+   principles
+   concepts
    usage
    api
    development
-   dummy
