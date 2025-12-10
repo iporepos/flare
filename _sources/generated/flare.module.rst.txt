@@ -1,7 +1,7 @@
-﻿copyme.module
-=============
+﻿flare.module
+============
 
-.. automodule:: copyme.module
+.. automodule:: flare.module
 
    
    .. rubric:: Functions

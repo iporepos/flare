@@ -1,13 +1,11 @@
-.. rename title [CHANGE THIS]:
-
 .. _home:
 
-Copyme
+FLARE
 ############################################
 
 .. adapt this welcoming message [CHANGE THIS]:
 
-Welcome to ``copyme`` documentation! A simple template for python development.
+Welcome to ``FLARE`` documentation! A text-based system for creating and managing standardized labels.
 
 Contents
 ********************************************
