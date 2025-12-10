@@ -79,6 +79,7 @@ OUTPUT_DIR = BASE_DIR / "outputs"
 # -----------------------------------------------------------------------
 DATA_FILE = DATA_DIR / "test_data.csv"
 DATASETS_FILE = DATA_DIR / "datasets.csv"
+DATA_NUMBERS_FILE = DATA_DIR / "test_numbers.csv"
 
 # Other
 # -----------------------------------------------------------------------
@@ -152,6 +153,13 @@ def load_data():
     # todo docstring
     testprint("loading numbers data")
     df = pd.read_csv(DATA_FILE, sep=";")
+    return df
+
+
+def load_numbers_data():
+    # todo docstring
+    testprint("loading numbers data")
+    df = pd.read_csv(DATA_NUMBERS_FILE, sep=";")
     return df
 
 

@@ -1,0 +1,23 @@
+Name;Alias;Title;Abstract
+abstract;abs;Abstract;Paragraph with detailed explanation
+acronym;acr;Acronym;Acronym
+alias;als;Alias;Five character name
+aliases;alss;Aliases;List of aliases
+category;cat;Category;Upper domain
+code;cd;Alphanumerical Code;Alphanumerical Code, including letters and numbers
+date;dt;Date;Date (year, month and day)
+datetime;dtm;Date and Time;Date and time, zone may be included
+domain;dom;Domain;Sub instance for Theme
+file;fle;File Name;File name
+id;id;Numerical Identifier;Numerical Identifier, also used as Primary Key
+is;is;Boolean condition;Prefix for boolean condition
+name;nm;Name;Single word name
+subdomain;sub;Subdomain;Sub instance for Domain
+tag;tag;Tag;Tag
+tags;tags;Tags;List of tags
+theme;thm;Theme;Transversal domain
+time;tm;Time;Time (hour, minute and seconds)
+timestamp;ts;Timestamp;Instant records of the timeline
+title;ttl;Title;Multiple word name
+url;url;Unique Resource Locator;Link for website or webpage
+version;v;Version;Version identifier

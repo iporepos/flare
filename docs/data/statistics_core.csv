@@ -1,0 +1,25 @@
+Name;Alias;Title;Abstract
+bias;bias;Mean Error;Average signed prediction error indicating overestimation or underestimation
+count;n;Count;Number of observations in the dataset
+cv;cv;Coefficient of Variation;Relative measure of dispersion defined as standard deviation divided by the mean
+fx;fx;Cumulative Probability;The Probability of being not-exceeded F(X) = 1 – P(X)
+iqr;iqr;Interquartile Range;Spread between the 75th and 25th percentiles
+mae;mae;Mean Absolute Error;Average of absolute prediction errors
+max;mx;Maximum;Largest observed value
+mean;mean;Mean;Arithmetic mean of the sample or population values
+min;mn;Minimum;Smallest observed value
+p05;p5;5th Percentile;Value below which 5% of the observations fall
+p25;p25;25th Percentile;Value below which 25% of the observations fall
+p50;p50;50th Percentile;Value below which 50% of the observations fall
+p75;p75;75th Percentile;Value below which 75% of the observations fall
+p95;p95;95th Percentile;Value below which 95% of the observations fall
+pvalue;pv;P-Value;Probability measure used to evaluate statistical significance under a null hypothesis
+px;px;Exceedance Probability;Probability of a value being exceeded P(X>=x)
+r;r;Correlation Coefficient;Pearson correlation coefficient representing linear association strength
+r2;r2;Coefficient of Determination;Proportion of variance in the dependent variable explained by the model
+range;rng;Range;Difference between maximum and minimum
+rmse;rmse;Root Mean Squared Error;Square root of the average of squared prediction errors
+sd;sd;Standard Deviation;Square root of variance, representing spread in the same units as the data
+sum;sm;Sum;Total sum of all observed values
+tx;tx;Return Period;Reciprocal of exceedance probability T(X) = 1/P(X)
+variance;var;Variance;Measure of dispersion representing the average squared deviation from the mean

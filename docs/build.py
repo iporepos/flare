@@ -55,9 +55,10 @@ import glob, os
 from pathlib import Path
 import argparse
 
+
 # External imports
 # =======================================================================
-# None required
+import pandas as pd
 
 # Project-level imports
 # =======================================================================
@@ -72,8 +73,14 @@ import argparse
 DOCS_DIR = Path("docs")
 BUILD_DIR = DOCS_DIR / "_build"
 GENERATED_DIR = DOCS_DIR / "generated"
+DOCS_DATA_DIR = DOCS_DIR / "data"
 INDEX_FILE = BUILD_DIR / "index.html"
 
+SRC_DIR = Path("src/flare/")
+SRC_DATA_DIR = SRC_DIR / "data"
+
+# Files
+SRC_DATA_NAMES = SRC_DATA_DIR / "names.csv"
 
 # FUNCTIONS
 # ***********************************************************************
@@ -118,6 +125,28 @@ def delete_generated():
     return None
 
 
+def parse_metadata_table():
+    df = pd.read_csv(SRC_DATA_NAMES, sep=";")
+    df = df.query("is_variation == 0 and core == 1 and theme == 'metadata'")
+    df = df.sort_values(by="name", ascending=True)
+    ls_cols = ["name", "alias", "title", "abstract"]
+    df = df[ls_cols]
+    df.columns = df.columns.str.capitalize()
+    df.to_csv(DOCS_DATA_DIR / "metadata_core.csv", sep=";", index=False)
+    return None
+
+
+def parse_stats_table():
+    df = pd.read_csv(SRC_DATA_NAMES, sep=";")
+    df = df.query("is_variation == 0 and core == 1 and theme == 'statistics'")
+    df = df.sort_values(by="name", ascending=True)
+    ls_cols = ["name", "alias", "title", "abstract"]
+    df = df[ls_cols]
+    df.columns = df.columns.str.capitalize()
+    df.to_csv(DOCS_DATA_DIR / "statistics_core.csv", sep=";", index=False)
+    return None
+
+
 # CLASSES
 # ***********************************************************************
 # No classes needed for this module
@@ -140,6 +169,11 @@ if __name__ == "__main__":
     )
 
     args = parser.parse_args()
+
+    # parse tables
+    # ------------------------------------------------------------------
+    parse_metadata_table()
+    parse_stats_table()
 
     # Call the builder
     # ------------------------------------------------------------------
