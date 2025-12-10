@@ -23,7 +23,7 @@ Alternatively, clone via terminal:
 
 ```bash
 # [CHECK THIS] adapt this for branches or other repos
-git clone https://github.com/iporepos/copyme.git
+git clone https://github.com/iporepos/flare.git
 ``` 
 
 ## Installing
@@ -69,7 +69,7 @@ dependencies in editable mode `-e` (including `dev` and `docs` dependencies with
 ```bash
 python -m pip install -e .[dev,docs]
 ```
-This will install all dependecies needed both for
+This will install all dependencies needed both for
 developing and documentation.
 
 ---
