@@ -426,7 +426,186 @@
                   
   <section id="literal-flags">
 <span id="flags"></span><h1>Literal Flags<a class="headerlink" href="#literal-flags" title="Link to this heading">#</a></h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mollis tincidunt erat eget iaculis. Mauris gravida ex quam, in porttitor lacus lobortis vitae. In a lacinia nisl. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi et tempor sem. Nullam quam dolor, venenatis eget magna ut, accumsan mollis erat.</p>
+<p>Literal Flags are <strong>reserved characters</strong> that encode a meaning within the domain of information.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-info" viewBox="0 0 16 16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg></span><span class="sd-summary-text">Example</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">p</span></code> letter is the flag encoding decimal separator in numbers:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;003p46&#39; = 3.46
+</pre></div>
+</div>
+</div>
+</details><section id="separators">
+<span id="flags-separators"></span><h2>Separators<a class="headerlink" href="#separators" title="Link to this heading">#</a></h2>
+<p>As mentioned in <a class="reference internal" href="concepts.html#concepts-labels"><span class="std std-ref">Concepts</span></a>, separators are flags that give the label structure.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-code" viewBox="0 0 16 16" aria-hidden="true"><path d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215Zm-6.56 0a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"></path></svg></span><span class="sd-summary-text">Example of separators</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{domain1}_{subdomain1-subdomain2}_{domain3}
+</pre></div>
+</div>
+</div>
+</details><section id="domain">
+<span id="flags-separators-domain"></span><h3>Domain<a class="headerlink" href="#domain" title="Link to this heading">#</a></h3>
+<p>The domain separator is the <strong>Underscore</strong> <code class="docutils literal notranslate"><span class="pre">_</span></code> character. It splits the domains in a label.</p>
+</section>
+<section id="subdomain">
+<span id="flags-separators-subdomain"></span><h3>Subdomain<a class="headerlink" href="#subdomain" title="Link to this heading">#</a></h3>
+<p>The subdomain separator is the <strong>Hyphen</strong> <code class="docutils literal notranslate"><span class="pre">-</span></code> character. It splits the subdomains in a label domain.</p>
+</section>
+</section>
+<section id="domain-flags">
+<span id="flags-domain-flags"></span><h2>Domain Flags<a class="headerlink" href="#domain-flags" title="Link to this heading">#</a></h2>
+<p>Domain Flags are all flags that a given domain requires in a specific form.
+It must be interpreted given the expected domain. For instance, if a domain
+is expected to be a <a class="reference internal" href="numbers.html#numbers"><span class="std std-ref">Number</span></a>, the <code class="docutils literal notranslate"><span class="pre">p</span></code> letter is the
+flag encoding decimal separator.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See the flags catalog table below.</p>
+</div>
+</section>
+<section id="replacers">
+<span id="flags-replacers"></span><h2>Replacers<a class="headerlink" href="#replacers" title="Link to this heading">#</a></h2>
+<p>Some flags are <strong>replacers</strong>, so they always carry the same meaning and replace all information in a label domain.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Disambiguating Replacers and Domain Flags</p>
+<p>Replacers always appear <strong>alone</strong> within a domain. Although they may resemble
+other Domain Flags, their distinguishing feature is that they occur
+by themselves between underscores. This pattern is the indicator that the
+element is a replacer.</p>
+</div>
+<section id="null">
+<span id="flags-replacers-null"></span><h3>Null<a class="headerlink" href="#null" title="Link to this heading">#</a></h3>
+<p>The flag <code class="docutils literal notranslate"><span class="pre">x</span></code> is a replacer for any domain in a label that is null (void or empty).</p>
+</section>
+<section id="unknown">
+<span id="flags-replacers-unknown"></span><h3>Unknown<a class="headerlink" href="#unknown" title="Link to this heading">#</a></h3>
+<p>The flag <code class="docutils literal notranslate"><span class="pre">z</span></code> is a replacer for any domain in a label that unknown.</p>
+</section>
+<section id="not-apply">
+<span id="flags-replacers-na"></span><h3>Not-apply<a class="headerlink" href="#not-apply" title="Link to this heading">#</a></h3>
+<p>The flag <code class="docutils literal notranslate"><span class="pre">n</span></code> is a replacer for any domain in a label that somehow not apply, like an exception to the rule.</p>
+</section>
+<section id="obvious">
+<span id="flags-replacers-obvious"></span><h3>Obvious<a class="headerlink" href="#obvious" title="Link to this heading">#</a></h3>
+<p>The flag <code class="docutils literal notranslate"><span class="pre">o</span></code> is a replacer for any domain in a label that is somewhat obvious,
+like it is described in the documentation or metadata files.
+It’s the lazy option for not filling everything. Use with caution.</p>
+</section>
+</section>
+<section id="flag-catalog">
+<span id="flags-catalog"></span><h2>Flag Catalog<a class="headerlink" href="#flag-catalog" title="Link to this heading">#</a></h2>
+<p>See below the full catalog of flags in <code class="docutils literal notranslate"><span class="pre">FLARE</span></code>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Flag</p></th>
+<th class="head"><p>Domain</p></th>
+<th class="head"><p>Subdomain</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">_</span></code></p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>Domain separator</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
+<td><p>x</p></td>
+<td><p>x</p></td>
+<td><p>Subdomain separator</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">o</span></code></p></td>
+<td><p>Replacer</p></td>
+<td><p>x</p></td>
+<td><p>Replacer for obvious information</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">n</span></code></p></td>
+<td><p>Replacer</p></td>
+<td><p>x</p></td>
+<td><p>Replacer for not-apply</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">x</span></code></p></td>
+<td><p>Replacer</p></td>
+<td><p>x</p></td>
+<td><p>Replacer for null</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">z</span></code></p></td>
+<td><p>Replacer</p></td>
+<td><p>x</p></td>
+<td><p>Replacer for unknown information</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">p</span></code></p></td>
+<td><p>Number</p></td>
+<td><p>Fraction</p></td>
+<td><p>Decimal separator</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">w</span></code></p></td>
+<td><p>Number</p></td>
+<td><p>Sign</p></td>
+<td><p>Prefix for negative sign or West quadrant</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">s</span></code></p></td>
+<td><p>Number</p></td>
+<td><p>Sign</p></td>
+<td><p>Prefix for negative sign or South quadrant</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">e</span></code></p></td>
+<td><p>Number</p></td>
+<td><p>Sign</p></td>
+<td><p>Prefix for positive sign or East quadrant</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">n</span></code></p></td>
+<td><p>Number</p></td>
+<td><p>Sign</p></td>
+<td><p>Prefix for positive sign or North quadrant</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">d</span></code></p></td>
+<td><p>Number</p></td>
+<td><p>Magnitude</p></td>
+<td><p>Suffix for tens multiplier (x10)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">c</span></code></p></td>
+<td><p>Number</p></td>
+<td><p>Magnitude</p></td>
+<td><p>Suffix for hundreds multiplier (x100)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">k</span></code></p></td>
+<td><p>Number</p></td>
+<td><p>Magnitude</p></td>
+<td><p>Suffix for thousands multiplier (x1,000)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">m</span></code></p></td>
+<td><p>Number</p></td>
+<td><p>Magnitude</p></td>
+<td><p>Suffix for millions multiplier (x1,000,000)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">b</span></code></p></td>
+<td><p>Number</p></td>
+<td><p>Magnitude</p></td>
+<td><p>Suffix for billions multiplier (x1,000,000,000)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">t</span></code></p></td>
+<td><p>Timestamp</p></td>
+<td><p>Time</p></td>
+<td><p>Prefix for time</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">z</span></code></p></td>
+<td><p>Timestamp</p></td>
+<td><p>Zone</p></td>
+<td><p>Prefix for zone</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">u</span></code></p></td>
+<td><p>Epoch</p></td>
+<td><p>Stop</p></td>
+<td><p>Prefix for stop timestamp</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 </section>
 
 
@@ -467,6 +646,31 @@
                 <dialog id="pst-secondary-sidebar-modal"></dialog>
                 <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separators">Separators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#domain">Domain</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subdomain">Subdomain</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-flags">Domain Flags</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#replacers">Replacers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#null">Null</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unknown">Unknown</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#not-apply">Not-apply</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#obvious">Obvious</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flag-catalog">Flag Catalog</a></li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
   <div role="note" aria-label="source link">

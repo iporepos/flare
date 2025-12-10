@@ -140,9 +140,10 @@ These letters replace special characters that are otherwise prohibited.
 
 Numbers
 ---------------------------------------------
-TODO
 
-.. include:: ./includes/ipsum.rst
+Numbers are a core component, since they are present in nearly every type of label.
+``FLARE`` provides a structured approach to encoding **integer numbers, real numbers, signals, and magnitude multipliers**.
+Each type has a specific role and format within a label.
 
 .. seealso::
 
@@ -153,9 +154,12 @@ TODO
 
 Date and Time
 ---------------------------------------------
-TODO
 
-.. include:: ./includes/ipsum.rst
+Date and Time (aka **datetime**) is a fundamental component, since nearly most labels require temporal reference.
+To cover different use cases, ``FLARE`` provides two main **domains** of temporal encoding:
+
+* **Timestamp** -- instant records of the timeline.
+* **Epoch** -- arbitrary time interval of the timeline.
 
 .. seealso::
 
@@ -166,29 +170,21 @@ TODO
 Names
 ---------------------------------------------
 
-``FLARE`` supports the use of **standard names** as a way to simplify and harmonize labeling.
+Standard names as a way to simplify and harmonize labeling, so these are important components.
 
-Standard names provide users with a predefined vocabulary for common domains and variables, so that they can label assets without constantly reinventing terms. This reduces ambiguity, saves time, and promotes consistency across projects.
+Standard names provide users with a predefined vocabulary for common domains and variables,
+so that they can label assets without constantly reinventing terms.
 
-A standard name is often used in contexts where certain terms occur repeatedly, such as **variables** in datasets or **statistics** applied to them.
+A standard name is often used in contexts where certain terms occur repeatedly,
+such as **scientific variables** in datasets or **statistics** applied to them.
 
 .. dropdown:: Example
     :icon: info
     :open:
 
-    Population is a common variable in demographic studies. ``FLARE`` can define ``population`` as a standard name, while also allowing a **short mode** like ``pop`` when brevity is required.
+    Population is a common variable in demographic studies. ``FLARE`` can define ``population`` as a
+    standard name, while also allowing a **short mode** like ``pop`` when brevity is required.
 
-Standard names therefore support both **long mode** (descriptive and explicit) and **short mode** (compact and space-saving). Both forms are valid within ``FLARE``, as long as they remain unambiguous within the labeling context.
-
-Variables:
-
-* ``population`` → long mode
-* ``pop`` → short mode
-
-Statistics:
-
-* ``sum``, ``mean``, ``std``
-* Combined: ``pop_2010_mean``
 
 .. seealso::
 
@@ -200,16 +196,22 @@ Statistics:
 Assets
 ============================================
 
-In ``FLARE``, the term **asset** refers to anything that can be labeled. Assets are the objects of labeling: the things for which a label provides meaning. Because ``FLARE`` is meant to be flexible and widely applicable, assets can take several forms inside the computer’s memory and storage. 
+In ``FLARE``, the term **asset** refers to anything that can be labeled.
+Assets are the objects of labeling: the things for which a label provides meaning.
 
 .. _concepts-assets-files:
 
 Files
 ---------------------------------------------
 
-The most obvious type of asset is the **file**. Files are the classic case: they live in the file system, they carry **extensions** (e.g., ``.csv``, ``.pdf``, ``.png``) that indicate their structure, and they are usually the first candidates for labeling. 
+The most obvious type of asset is the **file**.
 
-File labels benefit from extensions because they add information about the internal format directly to the name. Within files, there can still be **categories** (for example, documents, images, datasets), and these may sometimes call for specialized labeling styles.
+Files are the classic case: they live in the file system, they carry **extensions** (e.g., ``.csv``, ``.pdf``, ``.png``)
+that indicate their structure, and they are usually the first candidates for labeling.
+
+File labels benefit from extensions because they add information about the internal format directly to the name.
+Within files, there can still be **categories** (for example, documents, images, datasets),
+and these may sometimes call for specialized labeling styles.
 
 .. dropdown:: Example of labeling as raster file
     :icon: info
@@ -230,11 +232,14 @@ Fields
 
 Another important type of asset is the **field**. Fields are the **column names** of tables in a database or dataset. 
 
-When working with complex databases, relational models, or analytical workflows, fields become central assets that must be labeled consistently. Unlike files, fields do not have extensions, and their notation is stricter. 
+When working with complex databases, relational models, or analytical workflows,
+fields become central assets that must be labeled consistently. Unlike files,
+fields do not have extensions, and their notation is stricter.
 
 .. warning:: Hyphens in fields are prohibited
 
-    Hyphens in fields are prohibited, and the recommended characters are limited to ASCII letters, numbers, and underscores. This ensures maximum compatibility across database systems.
+    Hyphens in fields are prohibited, and the recommended characters are limited to ASCII letters,
+    numbers, and underscores. This ensures maximum compatibility across database systems.
 
 
 .. dropdown:: Example of labeling of a table field
@@ -255,6 +260,4 @@ Between files and fields, there is a large set of **intermediate assets**, which
 Layers can appear in different contexts: database schemas, database tables, GIS vector layers, or any asset that contain multiple labeled divisions. Layers are not files in the filesystem, but they are not atomic fields either—they occupy the middle ground. 
 
 Layers do not carry extensions and the use of hyphens is discouraged. Their labels must remain plain, unambiguous, and strictly ASCII-based.
-
-
 

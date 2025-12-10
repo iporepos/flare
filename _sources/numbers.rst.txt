@@ -3,10 +3,9 @@
 Numbers
 ############################################
 
-Numbers are a **core feature** of Flare labels and are present in nearly every type of label.
-They must be encoded in a **text-based, consistent, and unambiguous format**, ensuring that labels are sortable, readable, and machine-actionable.
-
-Flare provides a structured approach to encoding **integer numbers, real numbers, signals, and magnitude multipliers**. Each type has a specific role and format within a label.
+Numbers are a core component, since they are present in nearly every type of label.
+``FLARE`` provides a structured approach to encoding **integer numbers, real numbers, signals, and magnitude multipliers**.
+Each type has a specific role and format within a label.
 
 .. _numbers-summary:
 
@@ -39,7 +38,7 @@ Summary
 Integers
 ============================================
 
-Integer numbers are the most basic form of numerical encoding in Flare.
+Integer numbers are the most basic form of numerical encoding in ``FLARE``.
 They are used to represent counts, indices, or sequential identifiers.
 To ensure proper alignment and **consistent sorting**, integers are typically represented in a **zero-filled format** with a pre-set length for each label chunk.
 This avoids issues where, for example, ``2`` would otherwise appear after ``20`` in a lexical sort.
@@ -72,7 +71,7 @@ Fractions
 
 Real numbers extend the integer format by allowing **decimal fractions**.
 Because certain characters, like the period ``.``, are prohibited in labels,
-Flare uses the letter ``p`` as a decimal separator.
+``FLARE`` uses the letter ``p`` as a decimal separator.
 This allows precise numerical values to be encoded without violating the text-only principle.
 
 * **Format:** ``[integer]p[decimals]``
@@ -101,7 +100,7 @@ This allows precise numerical values to be encoded without violating the text-on
 Sign
 ============================================
 
-By default, Flare assumes the sign of a number is **positive**. But in some contexts, numbers need to convey **direction, polarity, or orientation**, such as in georeferencing or coordinate systems. For this, Flare uses **signal flags**, which are letters placed at the **beginning of a number**, to indicate whether it is positive or negative.
+By default, ``FLARE`` assumes the sign of a number is **positive**. But in some contexts, numbers need to convey **direction, polarity, or orientation**, such as in georeferencing or coordinate systems. For this, ``FLARE`` uses **signal flags**, which are letters placed at the **beginning of a number**, to indicate whether it is positive or negative.
 
 .. list-table::
    :widths: 25 35 40
@@ -147,8 +146,8 @@ By default, Flare assumes the sign of a number is **positive**. But in some cont
 Magnitude
 ============================================
 
-By default, Flare assumes the multiplier of a number is 1. Sometimes, it is necessary to indicate that a number should be interpreted with a **scale or multiplier**, such as hundreds or thousands.
-Flare uses **magnitude multiplier flags** as **suffixes** to numbers, separate from signals, to encode this information.
+By default, ``FLARE`` assumes the multiplier of a number is 1. Sometimes, it is necessary to indicate that a number should be interpreted with a **scale or multiplier**, such as hundreds or thousands.
+``FLARE`` uses **magnitude multiplier flags** as **suffixes** to numbers, separate from signals, to encode this information.
 
 .. list-table::
    :widths: 20 80
@@ -188,7 +187,7 @@ Flare uses **magnitude multiplier flags** as **suffixes** to numbers, separate f
 
 .. _numbers-flags:
 
-Literal Flags for Numbers
+Literal Flags
 ============================================
 
 .. list-table::

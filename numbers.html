@@ -426,9 +426,9 @@
                   
   <section id="numbers">
 <span id="id1"></span><h1>Numbers<a class="headerlink" href="#numbers" title="Link to this heading">#</a></h1>
-<p>Numbers are a <strong>core feature</strong> of Flare labels and are present in nearly every type of label.
-They must be encoded in a <strong>text-based, consistent, and unambiguous format</strong>, ensuring that labels are sortable, readable, and machine-actionable.</p>
-<p>Flare provides a structured approach to encoding <strong>integer numbers, real numbers, signals, and magnitude multipliers</strong>. Each type has a specific role and format within a label.</p>
+<p>Numbers are a core component, since they are present in nearly every type of label.
+<code class="docutils literal notranslate"><span class="pre">FLARE</span></code> provides a structured approach to encoding <strong>integer numbers, real numbers, signals, and magnitude multipliers</strong>.
+Each type has a specific role and format within a label.</p>
 <section id="summary">
 <span id="numbers-summary"></span><h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -466,7 +466,7 @@ They must be encoded in a <strong>text-based, consistent, and unambiguous format
 </section>
 <section id="integers">
 <span id="numbers-integers"></span><h2>Integers<a class="headerlink" href="#integers" title="Link to this heading">#</a></h2>
-<p>Integer numbers are the most basic form of numerical encoding in Flare.
+<p>Integer numbers are the most basic form of numerical encoding in <code class="docutils literal notranslate"><span class="pre">FLARE</span></code>.
 They are used to represent counts, indices, or sequential identifiers.
 To ensure proper alignment and <strong>consistent sorting</strong>, integers are typically represented in a <strong>zero-filled format</strong> with a pre-set length for each label chunk.
 This avoids issues where, for example, <code class="docutils literal notranslate"><span class="pre">2</span></code> would otherwise appear after <code class="docutils literal notranslate"><span class="pre">20</span></code> in a lexical sort.</p>
@@ -506,7 +506,7 @@ This avoids issues where, for example, <code class="docutils literal notranslate
 <span id="numbers-fractions"></span><h2>Fractions<a class="headerlink" href="#fractions" title="Link to this heading">#</a></h2>
 <p>Real numbers extend the integer format by allowing <strong>decimal fractions</strong>.
 Because certain characters, like the period <code class="docutils literal notranslate"><span class="pre">.</span></code>, are prohibited in labels,
-Flare uses the letter <code class="docutils literal notranslate"><span class="pre">p</span></code> as a decimal separator.
+<code class="docutils literal notranslate"><span class="pre">FLARE</span></code> uses the letter <code class="docutils literal notranslate"><span class="pre">p</span></code> as a decimal separator.
 This allows precise numerical values to be encoded without violating the text-only principle.</p>
 <ul class="simple">
 <li><p><strong>Format:</strong> <code class="docutils literal notranslate"><span class="pre">[integer]p[decimals]</span></code></p></li>
@@ -542,7 +542,7 @@ This allows precise numerical values to be encoded without violating the text-on
 </details></section>
 <section id="sign">
 <span id="numbers-sign"></span><h2>Sign<a class="headerlink" href="#sign" title="Link to this heading">#</a></h2>
-<p>By default, Flare assumes the sign of a number is <strong>positive</strong>. But in some contexts, numbers need to convey <strong>direction, polarity, or orientation</strong>, such as in georeferencing or coordinate systems. For this, Flare uses <strong>signal flags</strong>, which are letters placed at the <strong>beginning of a number</strong>, to indicate whether it is positive or negative.</p>
+<p>By default, <code class="docutils literal notranslate"><span class="pre">FLARE</span></code> assumes the sign of a number is <strong>positive</strong>. But in some contexts, numbers need to convey <strong>direction, polarity, or orientation</strong>, such as in georeferencing or coordinate systems. For this, <code class="docutils literal notranslate"><span class="pre">FLARE</span></code> uses <strong>signal flags</strong>, which are letters placed at the <strong>beginning of a number</strong>, to indicate whether it is positive or negative.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <colgroup>
 <col style="width: 25.0%" />
@@ -608,8 +608,8 @@ This allows precise numerical values to be encoded without violating the text-on
 </details></section>
 <section id="magnitude">
 <span id="numbers-magnitude"></span><h2>Magnitude<a class="headerlink" href="#magnitude" title="Link to this heading">#</a></h2>
-<p>By default, Flare assumes the multiplier of a number is 1. Sometimes, it is necessary to indicate that a number should be interpreted with a <strong>scale or multiplier</strong>, such as hundreds or thousands.
-Flare uses <strong>magnitude multiplier flags</strong> as <strong>suffixes</strong> to numbers, separate from signals, to encode this information.</p>
+<p>By default, <code class="docutils literal notranslate"><span class="pre">FLARE</span></code> assumes the multiplier of a number is 1. Sometimes, it is necessary to indicate that a number should be interpreted with a <strong>scale or multiplier</strong>, such as hundreds or thousands.
+<code class="docutils literal notranslate"><span class="pre">FLARE</span></code> uses <strong>magnitude multiplier flags</strong> as <strong>suffixes</strong> to numbers, separate from signals, to encode this information.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <colgroup>
 <col style="width: 20.0%" />
@@ -670,8 +670,8 @@ Flare uses <strong>magnitude multiplier flags</strong> as <strong>suffixes</stro
 </div>
 </div>
 </details></section>
-<section id="literal-flags-for-numbers">
-<span id="numbers-flags"></span><h2>Literal Flags for Numbers<a class="headerlink" href="#literal-flags-for-numbers" title="Link to this heading">#</a></h2>
+<section id="literal-flags">
+<span id="numbers-flags"></span><h2>Literal Flags<a class="headerlink" href="#literal-flags" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table">
 <colgroup>
 <col style="width: 10.0%" />
@@ -795,7 +795,7 @@ Flare uses <strong>magnitude multiplier flags</strong> as <strong>suffixes</stro
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fractions">Fractions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sign">Sign</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#magnitude">Magnitude</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#literal-flags-for-numbers">Literal Flags for Numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#literal-flags">Literal Flags</a></li>
 </ul>
   </nav></div>
 
