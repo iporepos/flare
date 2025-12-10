@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Dummy file &#8212; flare 0.0.1 documentation</title>
+    <title>Date and Time &#8212; flare 0.0.1 documentation</title>
   
   
   
@@ -46,11 +46,11 @@
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'dummy';</script>
-    <link rel="author" title="About these documents" href="about.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'datetime';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Development" href="development.html" />
+    <link rel="next" title="Names" href="names.html" />
+    <link rel="prev" title="Numbers" href="numbers.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -141,8 +141,15 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="about.html">
-    About
+  <a class="nav-link nav-internal" href="principles.html">
+    Principles
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="concepts.html">
+    Concepts
   </a>
 </li>
 
@@ -160,13 +167,6 @@
   </a>
 </li>
 
-
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="development.html">
-    Development
-  </a>
-</li>
-
             <li class="nav-item dropdown">
                 <button class="btn dropdown-toggle nav-item" type="button"
                 data-bs-toggle="dropdown" aria-expanded="false"
@@ -175,9 +175,9 @@
                 </button>
                 <ul id="pst-nav-more-links" class="dropdown-menu">
                     
-<li class=" current active">
-  <a class="nav-link dropdown-item nav-internal" href="#">
-    Dummy file
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="development.html">
+    Development
   </a>
 </li>
 
@@ -281,8 +281,15 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="about.html">
-    About
+  <a class="nav-link nav-internal" href="principles.html">
+    Principles
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="concepts.html">
+    Concepts
   </a>
 </li>
 
@@ -304,13 +311,6 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="development.html">
     Development
-  </a>
-</li>
-
-
-<li class="nav-item current active">
-  <a class="nav-link nav-internal" href="#">
-    Dummy file
   </a>
 </li>
 
@@ -357,7 +357,15 @@
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"></div>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flags.html">Literal Flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numbers.html">Numbers</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Date and Time</a></li>
+<li class="toctree-l1"><a class="reference internal" href="names.html">Names</a></li>
+<li class="toctree-l1"><a class="reference internal" href="files.html">Files</a></li>
+</ul>
+</div>
 </nav></div>
     </div>
   
@@ -396,7 +404,10 @@
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Dummy file</span></li>
+    
+    <li class="breadcrumb-item"><a href="concepts.html" class="nav-link">Concepts</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Date and Time</span></li>
   </ul>
 </nav>
 </div>
@@ -413,33 +424,9 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="dummy-file">
-<h1>Dummy file<a class="headerlink" href="#dummy-file" title="Link to this heading">#</a></h1>
-<p>This is a Markdown (<code class="docutils literal notranslate"><span class="pre">md</span></code>) file used for documentation under Sphinx.</p>
-<p>The extension <code class="docutils literal notranslate"><span class="pre">myst_parser</span></code> of Sphinx allows conversion to HTML during the
-build process. This is not a built-in extension, and must be listed in the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file:</p>
-<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Documentation dependencies </span>
-<span class="c1"># =======================================================================</span>
-<span class="c1"># install with `pip install -e &quot;.[docs]&quot;`</span>
-<span class="n">docs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="s2">&quot;sphinx&quot;</span><span class="p">,</span><span class="w">                       </span><span class="c1"># [EXAMPLE] Documentation generator</span>
-<span class="w">    </span><span class="s2">&quot;sphinx-autodoc-typehints&quot;</span><span class="p">,</span><span class="w">     </span><span class="c1"># [EXAMPLE] Include Python type hints in docs</span>
-<span class="w">    </span><span class="s2">&quot;sphinx-rtd-theme&quot;</span><span class="p">,</span><span class="w">             </span><span class="c1"># [EXAMPLE] Sphinx theme</span>
-<span class="w">    </span><span class="s2">&quot;pydata-sphinx-theme&quot;</span><span class="p">,</span><span class="w">          </span><span class="c1"># [EXAMPLE] Sphinx theme</span>
-<span class="w">    </span><span class="s2">&quot;sphinx_copybutton&quot;</span><span class="p">,</span><span class="w">            </span><span class="c1"># [EXAMPLE] Sphinx feature for code blocks</span>
-<span class="w">    </span><span class="s2">&quot;myst-parser&quot;</span><span class="p">,</span><span class="w">                  </span><span class="c1"># &lt;--- Sphinx feature for markdown files</span>
-<span class="w">    </span><span class="c1"># ... [ADD MORE IF NEDDED]</span>
-<span class="p">]</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Is better to stay in <code class="docutils literal notranslate"><span class="pre">rst</span></code> format, but this extension allows more flexibility.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The above admoenition note (and this) is written in the <code class="docutils literal notranslate"><span class="pre">myst_parser</span></code> compatible format</p>
-</div>
+  <section id="date-and-time">
+<span id="datetime"></span><h1>Date and Time<a class="headerlink" href="#date-and-time" title="Link to this heading">#</a></h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mollis tincidunt erat eget iaculis. Mauris gravida ex quam, in porttitor lacus lobortis vitae. In a lacinia nisl. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi et tempor sem. Nullam quam dolor, venenatis eget magna ut, accumsan mollis erat.</p>
 </section>
 
 
@@ -453,13 +440,22 @@ build process. This is not a built-in extension, and must be listed in the <code
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="development.html"
+       href="numbers.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Development</p>
+        <p class="prev-next-title">Numbers</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="names.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Names</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -476,7 +472,7 @@ build process. This is not a built-in extension, and must be listed in the <code
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/dummy.md.txt"
+      <li><a href="_sources/datetime.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div></div>
