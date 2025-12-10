@@ -71,6 +71,7 @@ import argparse
 # =======================================================================
 DOCS_DIR = Path("docs")
 BUILD_DIR = DOCS_DIR / "_build"
+GENERATED_DIR = DOCS_DIR / "generated"
 INDEX_FILE = BUILD_DIR / "index.html"
 
 
@@ -107,11 +108,12 @@ def delete_generated():
     """
     Delete all ``rst`` generated files prior to build.
     """
-    ls_files = glob.glob("./generated/*.rst")
+    ls_files = glob.glob(str(GENERATED_DIR / "*.rst"))
     if len(ls_files) == 0:
         pass
     else:
         for f in ls_files:
+            print(f"deleted {f}")
             os.remove(f)
     return None
 

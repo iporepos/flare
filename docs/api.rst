@@ -22,23 +22,13 @@ This reference, automatically generated using Sphinx, provides a complete overvi
 .. autosummary::
    :toctree: generated
 
-   copyme
+   flare
 
 
 .. autosummary::
    :toctree: generated
 
-   copyme.module
+   flare.module
 
 
-.. autosummary::
-   :toctree: generated
-
-   copyme.mypackage
-
-
-.. autosummary::
-   :toctree: generated
-
-   copyme.mypackage.submodule
 
