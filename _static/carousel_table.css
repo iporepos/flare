@@ -1,0 +1,22 @@
+/* Allow carousel slides to size themselves based on content */
+.sd-carousel {
+    height: auto !important;
+}
+
+/* Ensure tables do NOT get squished vertically on small screens */
+.sd-carousel .sd-card table {
+    width: 100% !important;
+    table-layout: auto !important;
+    display: block;
+    overflow-x: auto;       /* Enable horizontal scroll instead of squishing */
+}
+
+/* Make table wrapper auto-adjust height */
+.sd-carousel .sd-card {
+    height: auto !important;
+}
+
+/* Prevent slides from forcing fixed height */
+.sd-carousel .splide__slide {
+    height: auto !important;
+}
