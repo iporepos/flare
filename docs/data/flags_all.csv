@@ -1,0 +1,20 @@
+Flag;Domain;Subdomain;Abstract
+``_``;Separator;x;Domain separator
+``-``;Separator;x;Subdomain separator
+``o``;Replacer;x;Replacer for obvious information
+``na``;Replacer;x;Replacer for not-apply
+``x``;Replacer;x;Replacer for null
+``z``;Replacer;x;Replacer for unknown
+``p``;Number;Fraction;Decimal separator
+``w``;Number;Sign;Prefix for negative sign or West quadrant
+``s``;Number;Sign;Prefix for negative sign or South quadrant
+``e``;Number;Sign;Prefix for positive sign or East quadrant
+``n``;Number;Sign;Prefix for positive sign or North quadrant
+``d``;Number;Magnitude;Suffix for tens multiplier (x10)
+``c``;Number;Magnitude;Suffix for hundreds multiplier (x100)
+``k``;Number;Magnitude;Suffix for thousands multiplier (x1,000)
+``m``;Number;Magnitude;Suffix for millions multiplier (x1,000,000)
+``b``;Number;Magnitude;Suffix for billions multiplier (x1,000,000,000)
+``t``;Datetime;Time;Prefix for time
+``z``;Datetime;Zone;Prefix for zone
+``u``;Datetime;Epoch;Prefix for stop timestamp

@@ -20,7 +20,7 @@ Literal Flags are **reserved characters** that encode a meaning within the domai
 Separators
 ============================================
 
-As mentioned in :ref:`Concepts <concepts-labels>`, separators are flags that give the label structure.
+Separators are flags that give the label structure.
 
 .. dropdown:: Example of separators
     :icon: code
@@ -66,7 +66,7 @@ Some flags are **replacers**, so they always carry the same meaning and replace 
 .. important:: Disambiguating Replacers and Domain Flags
 
     Replacers always appear **alone** within a domain. Although they may resemble
-    other Domain Flags, their distinguishing feature is that they occur
+    other Domain Flags and Thematic Variables, their distinguishing feature is that they occur
     by themselves between underscores. This pattern is the indicator that the
     element is a replacer.
 
@@ -89,7 +89,7 @@ The flag ``z`` is a replacer for any domain in a label that unknown.
 Not-apply
 ---------------------------------------------
 
-The flag ``n`` is a replacer for any domain in a label that somehow not apply, like an exception to the rule.
+The flag ``na`` is a replacer for any domain in a label that somehow not apply, like an exception to the rule.
 
 .. _flags-replacers-obvious:
 
@@ -108,7 +108,7 @@ Flag Catalog
 See below the full catalog of flags in ``FLARE``.
 
 .. csv-table::
-   :file: ./data/flags.csv
+   :file: ./data/flags_all.csv
    :header-rows: 1
    :widths: auto
    :delim: ;

@@ -1,0 +1,4 @@
+Flag;Domain;Subdomain;Abstract
+``t``;Datetime;Time;Prefix for time
+``z``;Datetime;Zone;Prefix for zone
+``u``;Datetime;Epoch;Prefix for stop timestamp

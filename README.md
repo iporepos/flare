@@ -15,9 +15,10 @@
 
 # FLARE
 
-**Flare** — *Formatting Labels for Archive and Retrieval Efficiency* — is a lightweight, text-based system for creating and managing standardized labels. 
+**FLARE** — *Formatting Labels for Archive and Retrieval Efficiency* — is a notation system for creating and managing text-based labels.
 
-It provides conventions, notations and nomenclature for labeling files, layers, columns, and other assets, making them easier to organize, archive, and retrieve.
+It provides conventions, notations and nomenclature for labeling files, fields and layers,
+making them easier to organize, archive and retrieve.
 
 > [!NOTE]
 > Check out the [documentation website](https://iporepos.github.io/flare/)

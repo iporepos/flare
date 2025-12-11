@@ -256,23 +256,8 @@ Examples
 Literal Flags
 ============================================
 
-.. list-table::
-   :widths: 15 25 25 35
-   :header-rows: 1
-
-   * - Flag
-     - Domain
-     - Subdomain
-     - Meaning
-   * - ``t``
-     - Timestamp
-     - Time
-     - Prefix for time notation
-   * - ``z``
-     - Timestamp
-     - Zone
-     - Prefix for zone notation
-   * - ``u``
-     - Epoch
-     - Stop
-     - Separator of timestamps
+.. csv-table::
+       :file: /data/flags_datetime.csv
+       :header-rows: 1
+       :widths: auto
+       :delim: ;

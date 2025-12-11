@@ -138,13 +138,13 @@ External (requires installation):
   
 """
 html_theme = "pydata_sphinx_theme"  # <-- [CHECK THIS] it might be not installed. use built-in 'classic' in case
-html_static_path = ["_static"]
+html_static_path = ["_static", "figs"]
 
 # set as light mode the default (recommended)
 html_context = {"default_mode": "light"}
 
 # [CHECK THIS] adding the logo to the header
-html_logo = "https://github.com/iporepos/flare/blob/main/docs/figs/logo.png?raw=true"
+html_logo = "figs/logo.png"
 
 html_theme_options = {
     "github_url": "https://github.com/iporepos/flare",  # <-- [CHANGE THIS] set the actual url for the repo

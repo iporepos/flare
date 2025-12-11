@@ -1,10 +1,10 @@
-.. _files:
+.. _metadata:
 
 .. note::
 
     This page is being developed.
 
-Files
+Metadata
 ############################################
 
 .. include:: ./includes/ipsum.rst

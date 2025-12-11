@@ -1,10 +1,4 @@
-Flag;Domain;Subdomain;Meaning
-``_``;x;x;Domain separator
-``-``;x;x;Subdomain separator
-``o``;Replacer;x;Replacer for obvious information
-``n``;Replacer;x;Replacer for not-apply
-``x``;Replacer;x;Replacer for null
-``z``;Replacer;x;Replacer for unknown information
+Flag;Domain;Subdomain;Abstract
 ``p``;Number;Fraction;Decimal separator
 ``w``;Number;Sign;Prefix for negative sign or West quadrant
 ``s``;Number;Sign;Prefix for negative sign or South quadrant
@@ -15,6 +9,3 @@ Flag;Domain;Subdomain;Meaning
 ``k``;Number;Magnitude;Suffix for thousands multiplier (x1,000)
 ``m``;Number;Magnitude;Suffix for millions multiplier (x1,000,000)
 ``b``;Number;Magnitude;Suffix for billions multiplier (x1,000,000,000)
-``t``;Timestamp;Time;Prefix for time
-``z``;Timestamp;Zone;Prefix for zone
-``u``;Epoch;Stop;Prefix for stop timestamp

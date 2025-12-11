@@ -1,10 +1,11 @@
-.. _files:
+.. _statistics:
 
 .. note::
 
     This page is being developed.
 
-Files
+Statistics
 ############################################
 
 .. include:: ./includes/ipsum.rst
+

@@ -1,10 +1,10 @@
-.. _files:
+.. _layers:
 
 .. note::
 
-    This page is being developed.
+    This section is being developed.
 
-Files
+Layers
 ############################################
 
 .. include:: ./includes/ipsum.rst

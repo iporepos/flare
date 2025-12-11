@@ -6,6 +6,18 @@ Names
 Standard names provide users with a predefined vocabulary for common themes,
 so that they can label assets without constantly reinventing terms.
 
+.. toctree::
+   :maxdepth: 1
+
+   metadata
+   statistics
+   variables
+
+.. _names-rule:
+
+Structure
+============================================
+
 Standard names are single, **human-readable words** designed to be immediately
 interpretable rather than cryptic. Their purpose is to make labels self-explanatory
 so users can understand the meaning without additional decoding.
@@ -14,12 +26,8 @@ so users can understand the meaning without additional decoding.
     :icon: info
     :open:
 
-    Population is a common variable in demographic studies. ``FLARE`` can define ``population`` as a
-    standard name.
-
-    Also, the statistics related to ``population`` can be defined as ``sum`` or ``mean``.
-    So a compound label for a field in a database would be ``population_mean``, etc.
-
+    Population is a common variable in demographic studies. ``FLARE`` define ``population`` as a
+    standard name, so it must be used when labeling a column.
 
 
 .. _names-attributes:
@@ -37,81 +45,141 @@ The core attributes set is given in the table below:
    :widths: auto
 
    * - Attribute
-     - Type / Format
-     - Purpose
-   * - name
+     - Style
+     - Abstract
+   * - ``name``
      - Single word
      - Name immediately interpretable by humans.
-   * - alias
+   * - ``alias``
      - Short single word (up to 5 characters)
      - Short alternative identifier used in compact or symbolic contexts.
-   * - title
+   * - ``title``
      - Single phrase
      - Full formal name; concise but descriptive label for the concept.
-   * - description
-     - Long text, multiple phrases allowed
+   * - ``abstract``
+     - One paragraph, multiple phrases allowed
      - Extended explanation providing context and elaboration beyond the title.
 
 
 .. _names-metadata:
 
-Metadata Names
+Names for Metadata
 ============================================
 
-Metadata Names are standard names given to properties of an asset.
-For instance, the label ``timestamp`` is given to identify the time of a givern record.
+Metadata names are standard names given to properties of an asset.
+For instance, the label ``timestamp`` is given to identify the time of a given record.
+Metadata names spam across a range of themes, depending on the kind of data it refers.
 
-The core metadata names set in ``FLARE`` is given in the table below.
+.. dropdown:: Core metadata names
+    :icon: table
+    :animate: fade-in-slide-down
+    :open:
 
-.. csv-table::
-   :file: /data/metadata_core.csv
-   :header-rows: 1
-   :widths: auto
-   :delim: ;
+    .. csv-table::
+       :file: /data/metadata_core.csv
+       :header-rows: 1
+       :widths: auto
+       :delim: ;
+
+.. seealso::
+
+    Check out :ref:`all metadata names <metadata>` organized by theme.
+
 
 .. _names-stats:
 
-Statistics Names
+Names for Statistics
 ============================================
 
-Statistics Names are typical
+Statistics names are standard names given to typical statistical measures derived from quantitative data.
+For instance, the label ``mean`` is given to identify the arithmetic mean of the sample or population values.
+Statistics names spam across some themes, depending on the kind of analysis it refers, like curve fitting or
+hypothesis testing.
 
-.. include:: ./includes/ipsum.rst
+.. dropdown:: Core statistics names
+    :icon: table
+    :animate: fade-in-slide-down
+    :open:
 
-.. csv-table::
-   :file: /data/statistics_core.csv
-   :header-rows: 1
-   :widths: auto
-   :delim: ;
+    .. csv-table::
+       :file: /data/statistics_core.csv
+       :header-rows: 1
+       :widths: auto
+       :delim: ;
+
+.. seealso::
+
+    Check out :ref:`all statistics names <statistics>` organized by theme.
 
 .. _names-variables:
 
-Thematic Variables
+Names for Thematic Variables
 ============================================
 
-Thematic variables are standard names related to common information found in scientific and technical contexts.
-
-Each thematic variable is associated with a **theme**, which represents the kind of information it carries,
+Thematic variables are found in scientific and technical contexts.
+Each thematic variable is associated with a theme, which represents the kind of information it carries,
 whether **quantitative** (numeric measures) or **qualitative** (categorical information).
 
-Variables can include suggested **data types** for storing the variable in fields or files, ensuring that datasets are created and encoded consistently across projects.
+Names for thematic variables include extra attributes, like *units* and *data-type*.
 
-``FLARE`` also allows **compact modes for data types**: for example, numeric values can be stored as integers together with a **multiplier**. The multiplier enables efficient storage while preserving the actual value range, since the stored integer can be divided by the multiplier to reconstruct the original value. This approach provides a structured and standardized way to encode variables, making them machine-actionable while maintaining clarity and portability in labels.
+.. seealso::
 
+    Check out :ref:`all thematic variables <variables>` organized by theme.
+
+.. list-table::
+   :header-rows: 1
+   :widths: auto
+
+   * - Attribute
+     - Title
+     - Abstract
+
+   * - category
+     - Physical unit expressed as a string (e.g., ``m``, ``kg``, ``mm/day``).
+     - Conveys measurement units for correct interpretation, conversions, and dimensional checks.
+
+   * - units
+     - Physical unit expressed as a string (e.g., ``m``, ``kg``, ``mm/day``).
+     - Conveys measurement units for correct interpretation, conversions, and dimensional checks.
+
+   * - dtype
+     - Primitive data-type category.
+     - Defines the fundamental nature of the data in a language-agnostic way.
+
+   * - min
+     - Minimum or lower bound in natural range.
+     - Encodes the natural minimum feasible value of the variable; unbounded if null.
+
+   * - max
+     - Maximum or lower bound in natural range.
+     - Encodes the natural maximum feasible value of the variable; unbounded if null.
+
+   * - dtype_storage
+     - Suggested storage data-type in NumPy style.
+     - Defines the data-type in NumPy style considering the scale factor.
+
+   * - scale
+     - Suggested numeric factor multiplier for efficient storage.
+     - Indicates compression or scaling applied during storage; actual value is obtained by applying the inverse of the multiplier.
+
+   * - nodata
+     - Suggested value reserved for null value in storage.
+     - Specifies the conventional placeholder for missing or undefined values in storage.
 
 
 
 .. _names-programming-vars:
 
-Programming Variables
+Names for Code Variables
 ============================================
 
-``FLARE`` also applies to **symbols**, which are the identifiers used in code for static and dynamic structures in programming environments (constants, functions, classes, etc).
+Code variables,
+which are the identifiers used in code for static and dynamic structures in
+programming environments (constants, functions, classes, etc).
 
 While the exact naming rules for symbols depend on the programming language, ``FLARE`` provides a consistent approach to structuring symbol names across contexts.
 
 Symbols may follow the same hierarchical logic of domains and subdomains, allowing them to encode information in a structured way that remains human-readable and machine-actionable. Like fields, hyphens are not allowed in symbols, as they are interpreted as subtraction operators in most languages.
-
 
 
 .. dropdown:: Example of labeling of a dictionary in Python

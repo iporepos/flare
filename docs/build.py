@@ -81,6 +81,7 @@ SRC_DATA_DIR = SRC_DIR / "data"
 
 # Files
 SRC_DATA_NAMES = SRC_DATA_DIR / "names.csv"
+SRC_DATA_FLAGS = SRC_DATA_DIR / "flags.csv"
 
 # FUNCTIONS
 # ***********************************************************************
@@ -125,23 +126,39 @@ def delete_generated():
     return None
 
 
-def parse_metadata_table():
+def parse_table_flags(domain=None):
+    df = pd.read_csv(SRC_DATA_FLAGS, sep=";")
+    if domain is not None:
+        df = df.query(f"domain == '{domain}'")
+    else:
+        domain = "all"
+    df["flag"] = "``" + df["flag"] + "``"
+    df.columns = df.columns.str.capitalize()
+    df.to_csv(DOCS_DATA_DIR / f"flags_{domain.lower()}.csv", sep=";", index=False)
+    return None
+
+
+def parse_table_metadata():
     df = pd.read_csv(SRC_DATA_NAMES, sep=";")
     df = df.query("is_variation == 0 and core == 1 and theme == 'metadata'")
     df = df.sort_values(by="name", ascending=True)
     ls_cols = ["name", "alias", "title", "abstract"]
     df = df[ls_cols]
+    df["name"] = "``" + df["name"] + "``"
+    df["alias"] = "``" + df["alias"] + "``"
     df.columns = df.columns.str.capitalize()
     df.to_csv(DOCS_DATA_DIR / "metadata_core.csv", sep=";", index=False)
     return None
 
 
-def parse_stats_table():
+def parse_table_statistics():
     df = pd.read_csv(SRC_DATA_NAMES, sep=";")
     df = df.query("is_variation == 0 and core == 1 and theme == 'statistics'")
     df = df.sort_values(by="name", ascending=True)
     ls_cols = ["name", "alias", "title", "abstract"]
     df = df[ls_cols]
+    df["name"] = "``" + df["name"] + "``"
+    df["alias"] = "``" + df["alias"] + "``"
     df.columns = df.columns.str.capitalize()
     df.to_csv(DOCS_DATA_DIR / "statistics_core.csv", sep=";", index=False)
     return None
@@ -172,8 +189,11 @@ if __name__ == "__main__":
 
     # parse tables
     # ------------------------------------------------------------------
-    parse_metadata_table()
-    parse_stats_table()
+    parse_table_metadata()
+    parse_table_statistics()
+    parse_table_flags(domain=None)
+    parse_table_flags(domain="Datetime")
+    parse_table_flags(domain="Number")
 
     # Call the builder
     # ------------------------------------------------------------------
