@@ -22,7 +22,7 @@ Features
 
 ``FLARE`` offers a suite of features for formatting labels.
 
-.. card-carousel:: 2
+.. card-carousel:: 1
 
     .. card:: Numbers
         :link: numbers
