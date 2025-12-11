@@ -139,6 +139,7 @@ External (requires installation):
 """
 html_theme = "pydata_sphinx_theme"  # <-- [CHECK THIS] it might be not installed. use built-in 'classic' in case
 html_static_path = ["_static", "figs"]
+html_css_files = ["carousel_table_fix.css"]
 
 # set as light mode the default (recommended)
 html_context = {"default_mode": "light"}
