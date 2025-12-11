@@ -18,3 +18,4 @@ b;Number;Magnitude;Suffix for billions multiplier (x1,000,000,000)
 t;Datetime;Time;Prefix for time
 z;Datetime;Zone;Prefix for zone
 u;Datetime;Epoch;Prefix for stop timestamp
+v;Version;x;Prefix for version

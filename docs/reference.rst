@@ -12,6 +12,7 @@ Reference
    flags
    numbers
    datetime
+   versions
    names
    files
    fields
@@ -49,6 +50,10 @@ Summary
    * - :ref:`Date and Time<reference-datetime>`
      - Label component. Temporal encodings used to represent instants or intervals.
      - Two domains: *timestamp* (exact time) and *epoch* (named or structured periods); standardized YYYYMMDD… formats.
+
+   * - :ref:`Versions<reference-versions>`
+     - Label component. Standardized versioning notation.
+     - Includes options like semantic versioning and timestamp versioning.
 
    * - :ref:`Names<reference-names>`
      - Label component. Standardized vocabulary for variables, statistics, domains, and common descriptors.
@@ -229,6 +234,19 @@ To cover different use cases, ``FLARE`` provides two main components of temporal
 .. seealso::
 
     Get more details on :ref:`Date and Time <datetime>` documentation page.
+
+.. _reference-versions:
+
+Versions
+---------------------------------------------
+
+Version schemes must be deterministic, machine-readable, and easy to compare.
+To accommodate different operational contexts, ``FLARE`` standardizes three complementary versioning schemes:
+semantic versioning, compact semantic versioning, and timestamp-based versioning.
+
+.. seealso::
+
+    Get more details on :ref:`Versions <versions>` documentation page.
 
 .. _reference-names:
 
