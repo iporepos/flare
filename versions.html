@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Metadata &#8212; flare 0.0.1 documentation</title>
+    <title>Versions &#8212; flare 0.0.1 documentation</title>
   
   
   
@@ -47,11 +47,11 @@
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'metadata';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'versions';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Statistics" href="statistics.html" />
-    <link rel="prev" title="Names" href="names.html" />
+    <link rel="next" title="Names" href="names.html" />
+    <link rel="prev" title="Date and Time" href="datetime.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -363,9 +363,9 @@
 <li class="toctree-l1"><a class="reference internal" href="flags.html">Literal Flags</a></li>
 <li class="toctree-l1"><a class="reference internal" href="numbers.html">Numbers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datetime.html">Date and Time</a></li>
-<li class="toctree-l1"><a class="reference internal" href="versions.html">Versions</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="names.html">Names</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Metadata</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Versions</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="names.html">Names</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="metadata.html">Metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="statistics.html">Statistics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="variables.html">Thematic Variables</a></li>
 </ul>
@@ -416,10 +416,7 @@
     
     <li class="breadcrumb-item"><a href="reference.html" class="nav-link">Reference</a></li>
     
-    
-    <li class="breadcrumb-item"><a href="names.html" class="nav-link">Names</a></li>
-    
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Metadata</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Versions</span></li>
   </ul>
 </nav>
 </div>
@@ -436,13 +433,116 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="admonition note" id="metadata">
-<p class="admonition-title">Note</p>
-<p>This page is being developed.</p>
+  <section id="versions">
+<span id="id1"></span><h1>Versions<a class="headerlink" href="#versions" title="Link to this heading">#</a></h1>
+<p>Versions are a structural component of all labels associated with assets whose state evolves over time.
+They provide an interpretable mechanism for expressing change, maturity, and ordering across
+successive releases.</p>
+<p>Within the <code class="docutils literal notranslate"><span class="pre">FLARE</span></code> specification, version schemes must be deterministic, machine-readable, and easy to compare.
+To accommodate different operational contexts, <code class="docutils literal notranslate"><span class="pre">FLARE</span></code> standardizes three complementary versioning schemes:
+semantic versioning, compact semantic versioning, and timestamp-based versioning.</p>
+<section id="summary">
+<span id="versions-summary"></span><h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 25.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Scheme</p></th>
+<th class="head"><p>Canonical Pattern</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Semantic Versioning</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{major}.{minor}.{patch}</span></code></p></td>
+<td><p>Industry-standard versioning model emphasizing compatibility, stability, and explicit change semantics. Suitable for APIs, libraries, and stable interfaces.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Semantic Versioning (Compact)</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">v{major}{minor}{patch}</span></code></p></td>
+<td><p>Four-character compact encoding (<code class="docutils literal notranslate"><span class="pre">v</span></code> + three digits). Constrained to single-digit domains (0–9 for each component). Intended for short identifiers in resource-limited contexts.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Timestamp Versioning</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">v{timestamp}</span></code></p></td>
+<td><p>Chronologically ordered versioning based on a timestamp with at least second-level resolution. Structured or unstructured formats are allowed, including zoned timestamps.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
-<section id="id1">
-<h1>Metadata<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mollis tincidunt erat eget iaculis. Mauris gravida ex quam, in porttitor lacus lobortis vitae. In a lacinia nisl. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi et tempor sem. Nullam quam dolor, venenatis eget magna ut, accumsan mollis erat.</p>
+</section>
+<section id="semantic-versioning">
+<span id="versions-semantic"></span><h2>Semantic Versioning<a class="headerlink" href="#semantic-versioning" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://semver.org/">Semantic Versioning</a> is a widely adopted versioning standard used to communicate the
+evolution, stability, and compatibility of an API or system. It provides a deterministic and interpretable structure,
+helping users understand the impact of a release and anticipate integration risks.</p>
+<p>A semantic version follows the canonical structure:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{major}.{minor}.{patch}
+</pre></div>
+</div>
+<p>with the following rules:</p>
+<ol class="arabic simple">
+<li><p><strong>major</strong>
+Non-negative integer incremented when introducing changes that break backward compatibility.</p></li>
+<li><p><strong>minor</strong>
+Non-negative integer incremented when adding new functionality in a backward-compatible manner.</p></li>
+<li><p><strong>patch</strong>
+Non-negative integer incremented when applying backward-compatible bug fixes.</p></li>
+</ol>
+<p>A version with <strong>major = 0</strong> (e.g., <code class="docutils literal notranslate"><span class="pre">0.0.1</span></code>) denotes an unstable development phase in which public interfaces may
+change frequently and without notice.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Read more about the Semantic Versioning at <a class="reference external" href="https://semver.org/">https://semver.org/</a></p>
+</div>
+</section>
+<section id="semantic-versioning-compact">
+<span id="versions-semantic-compact"></span><h2>Semantic Versioning Compact<a class="headerlink" href="#semantic-versioning-compact" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">FLARE</span></code> supports a compact semantic versioning variant in which the separating dots are omitted and the version
+string is prefixed with <code class="docutils literal notranslate"><span class="pre">v</span></code>. This produces a shorter, strictly numeric representation while preserving the underlying
+semantic structure.</p>
+<p>The canonical compact representation is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>v{major}{minor}{patch}
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Compact flavor of semantic versioning in <code class="docutils literal notranslate"><span class="pre">FLARE</span></code></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;1.0.3&#39;  =  &#39;v103&#39;
+</pre></div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Compact versioning is restricted to <strong>single-digit domains</strong>.
+The compact form is strictly 4 characters long (<code class="docutils literal notranslate"><span class="pre">v</span></code> + three digits).
+As a consequence:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">major</span></code> must be in the range 0–9</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">minor</span></code> must be in the range 0–9</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">patch</span></code> must be in the range 0–9</p></li>
+</ul>
+<p>Values above 9 (e.g., <code class="docutils literal notranslate"><span class="pre">10</span></code> or <code class="docutils literal notranslate"><span class="pre">11</span></code> for <code class="docutils literal notranslate"><span class="pre">minor</span></code> or <code class="docutils literal notranslate"><span class="pre">patch</span></code>) cannot be encoded in compact form.
+In such cases, the full semantic notation (<code class="docutils literal notranslate"><span class="pre">major.minor.patch</span></code>) must be used.</p>
+</div>
+</section>
+<section id="timestamp-versioning">
+<span id="versions-timestamp"></span><h2>Timestamp Versioning<a class="headerlink" href="#timestamp-versioning" title="Link to this heading">#</a></h2>
+<p>Timestamp-based versioning assigns versions according to the precise moment an artifact is created or released. This
+approach is particularly suited for automated workflows, continuous integration pipelines, and environments in which
+chronological ordering is more informative than semantic increments.</p>
+<p>A timestamp version in <code class="docutils literal notranslate"><span class="pre">FLARE</span></code> is any string that encodes a <strong>timestamp with at least day-level resolution</strong>.
+The format may be zoned or un-zoned, compact or extended, and may include separators or timezone indicators.</p>
+<p>A canonical representation is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>v{timestamp}
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Get more details about timestamps on <a class="reference internal" href="datetime.html#datetime"><span class="std std-ref">Date and Time</span></a> documentation page.</p>
+</div>
+</section>
 </section>
 
 
@@ -456,20 +556,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="names.html"
+       href="datetime.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Names</p>
+        <p class="prev-next-title">Date and Time</p>
       </div>
     </a>
     <a class="right-next"
-       href="statistics.html"
+       href="names.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Statistics</p>
+        <p class="prev-next-title">Names</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -485,10 +585,25 @@
 
 
   <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#semantic-versioning">Semantic Versioning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#semantic-versioning-compact">Semantic Versioning Compact</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#timestamp-versioning">Timestamp Versioning</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/metadata.rst.txt"
+      <li><a href="_sources/versions.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div></div>

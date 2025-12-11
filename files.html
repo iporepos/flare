@@ -363,6 +363,7 @@
 <li class="toctree-l1"><a class="reference internal" href="flags.html">Literal Flags</a></li>
 <li class="toctree-l1"><a class="reference internal" href="numbers.html">Numbers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datetime.html">Date and Time</a></li>
+<li class="toctree-l1"><a class="reference internal" href="versions.html">Versions</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="names.html">Names</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="metadata.html">Metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="statistics.html">Statistics</a></li>
@@ -438,7 +439,653 @@
 </div>
 <section id="id1">
 <h1>Files<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mollis tincidunt erat eget iaculis. Mauris gravida ex quam, in porttitor lacus lobortis vitae. In a lacinia nisl. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi et tempor sem. Nullam quam dolor, venenatis eget magna ut, accumsan mollis erat.</p>
+<p>A file is the most obvious kind of asset in the <code class="docutils literal notranslate"><span class="pre">FLARE</span></code> system.</p>
+<p>Files live in the file system of the computer, they carry an <strong>extension suffix</strong> (e.g., <code class="docutils literal notranslate"><span class="pre">.csv</span></code>, <code class="docutils literal notranslate"><span class="pre">.pdf</span></code>, <code class="docutils literal notranslate"><span class="pre">.png</span></code>)
+that indicate their structure, and they are usually the first candidates for labeling.</p>
+<p>File labels benefit from extensions suffix because they add information about the internal format directly to the name.
+Within files, there can still be broad file <strong>categories</strong> (for example, Documents, Images, Datasets),
+and these may sometimes call for specialized labeling structures.</p>
+<section id="labeling-schemes">
+<span id="files-labeling"></span><h2>Labeling Schemes<a class="headerlink" href="#labeling-schemes" title="Link to this heading">#</a></h2>
+<p>A labeling scheme defines the canonical structure of a file label, ensuring that
+assets remain uniquely identifiable, interpretable, and easy to organize across
+projects. <code class="docutils literal notranslate"><span class="pre">FLARE</span></code> currently supports two complementary schemes:</p>
+<ol class="arabic simple">
+<li><p><strong>Generic Scheme</strong> — a versatile, multi-domain label suitable for versioned assets
+associated with projects, workflows, or operational documents.</p></li>
+<li><p><strong>Reference Scheme</strong> — a compact and human-readable convention tailored to
+bibliographic or publication-related assets (e.g., PDFs, BibTeX sources, reports).</p></li>
+</ol>
+<p>Both schemes are designed to be deterministic, machine-parsable, and suitable for
+large, heterogeneous collections of files.</p>
+<section id="generic-scheme">
+<span id="files-labeling-generic"></span><h3>Generic Scheme<a class="headerlink" href="#generic-scheme" title="Link to this heading">#</a></h3>
+<p>The <strong>generic scheme</strong> is intended for general-purpose organizational use across
+projects, deliverables, and operational artifacts.</p>
+<p>The canonical representation is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{type}_{project}_{item}_{version}_{suffix}
+</pre></div>
+</div>
+<p>It encodes five domains:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Domain</p></th>
+<th class="head"><p>Abstract</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">type</span></code></p></td>
+<td><p>The nature of the file (e.g., <code class="docutils literal notranslate"><span class="pre">report</span></code>, <code class="docutils literal notranslate"><span class="pre">contract</span></code>, <code class="docutils literal notranslate"><span class="pre">dataset</span></code>).</p></td>
+</tr>
+<tr class="row-odd"><td><p>project</p></td>
+<td><p>A higher-level domain representing the project or overarching activity. Often an alphanumeric project code.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">item</span></code></p></td>
+<td><p>A lower-level domain nested within the project. Useful for representing components such as sub-tasks, contracts, proposals, or any subordinate classification.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">version</span></code></p></td>
+<td><p>Any version expressed using one of the supported versioning schemes (semantic, compact semantic, or timestamp).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">suffix</span></code></p></td>
+<td><p>An optional convenience tag. May be empty (<code class="docutils literal notranslate"><span class="pre">X</span></code>) or encode workflow states such as <code class="docutils literal notranslate"><span class="pre">signed</span></code>, <code class="docutils literal notranslate"><span class="pre">todo</span></code>, <code class="docutils literal notranslate"><span class="pre">draft</span></code>, or other operational flags.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-info" viewBox="0 0 16 16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg></span><span class="sd-summary-text">Example with semantic versioning</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>REPORT_A002_F005_V002_X.pdf
+</pre></div>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-info" viewBox="0 0 16 16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg></span><span class="sd-summary-text">Example with timestamp versioning</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>CONTRACT_A002_F002_V20250314_signed.pdf
+</pre></div>
+</div>
+</div>
+</details><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference internal" href="versions.html#versions"><span class="std std-ref">Versions</span></a> for details on supported version structures.</p>
+</div>
+</section>
+<section id="reference-scheme">
+<span id="files-labeling-reference"></span><h3>Reference Scheme<a class="headerlink" href="#reference-scheme" title="Link to this heading">#</a></h3>
+<p>The <strong>reference scheme</strong> provides a cleaner and more human-readable labeling
+standard for citable or publication-oriented assets, including:</p>
+<ul class="simple">
+<li><p>academic publications</p></li>
+<li><p>institutional reports</p></li>
+<li><p>datasets with bibliographic metadata</p></li>
+<li><p>BibTeX files</p></li>
+<li><p>digital repository entries</p></li>
+</ul>
+<p>The canonical representation of the reference scheme is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{author}_{year}_{item}
+</pre></div>
+</div>
+<p>It encodes three domains:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Domain</p></th>
+<th class="head"><p>Abstract</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">author</span></code></p></td>
+<td><p>The primary author surname, institutional acronym, or a standard alias. Institutions with long formal names should use a short, interpretable acronym.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">year</span></code></p></td>
+<td><p>The four-digit publication or release year.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">item</span></code></p></td>
+<td><p>A disambiguation token (<code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, <code class="docutils literal notranslate"><span class="pre">c</span></code>…) used when the same author publishes multiple items in the same year.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-info" viewBox="0 0 16 16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg></span><span class="sd-summary-text">Example of human author reference</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Here a 3 files are grouped for the document, the citation file and the notes.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Smith_2021_a.pdf
+Smith_2021_a.bib
+Smith_2021_a.md
+</pre></div>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-info" viewBox="0 0 16 16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg></span><span class="sd-summary-text">Example for institution author</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>NOAA_2005_a.pdf
+EPA_1995_a.pdf
+</pre></div>
+</div>
+</div>
+</details></section>
+<section id="dataset-scheme">
+<span id="files-labeling-dataset"></span><h3>Dataset Scheme<a class="headerlink" href="#dataset-scheme" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">dataset</span></code> scheme is designed for structured data assets whose naming must capture provenance,
+product family, spatial context, and temporal reference. It is particularly suitable for geospatial,
+scientific, and observational datasets in which multiple dimensions of specificity are required for
+clear identification and reproducibility.</p>
+<p>The canonical representation of the dataset scheme is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{source}_{collection}_{item}_{specs}_{extent}_{datetime}
+</pre></div>
+</div>
+<p>It encodes six domains:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 15.0%" />
+<col style="width: 85.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Domain</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">source</span></code></p></td>
+<td><p>The data provider or originator. This may be an agency (e.g., <code class="docutils literal notranslate"><span class="pre">USGS</span></code>, <code class="docutils literal notranslate"><span class="pre">COPERNICUS</span></code>),
+a space agency mission (e.g., <code class="docutils literal notranslate"><span class="pre">NASA</span></code>), or any authoritative institutional source.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">collection</span></code></p></td>
+<td><p>The name, code or id for dataset family, product line, or collection. Examples include
+satellite missions (<code class="docutils literal notranslate"><span class="pre">Landsat08</span></code>), model outputs, or named product groups.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">item</span></code></p></td>
+<td><p>The name, code or id for a self-contained data asset within the collection. Often corresponds to an individual file,
+granule, tile, or sub-product.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">specs</span></code></p></td>
+<td><p>An optional specification domain for additional qualifiers. Useful for encoding
+coordinate system, spatial or temporal resolution, algorithm variant, processing level,
+or any other descriptive modifier. May be left empty (e.g., <code class="docutils literal notranslate"><span class="pre">x</span></code> or <code class="docutils literal notranslate"><span class="pre">o</span></code>) when obvious.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">extent</span></code></p></td>
+<td><p>A spatial reference describing the geographical scope of the data. May include bounding boxes,
+coordinate tuples, tile identifiers, region codes, administrative names (e.g., county or city),
+or other spatial identifiers. May be left empty (e.g., <code class="docutils literal notranslate"><span class="pre">x</span></code> or <code class="docutils literal notranslate"><span class="pre">o</span></code>) when obvious.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">datetime</span></code></p></td>
+<td><p>A temporal reference marking the acquisition, validity, or observation period. Any timestamp or
+epoch is valid. May be left empty (e.g., <code class="docutils literal notranslate"><span class="pre">x</span></code> or <code class="docutils literal notranslate"><span class="pre">o</span></code>) when obvious.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-info" viewBox="0 0 16 16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg></span><span class="sd-summary-text">Example of raster tile labeling</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Here is shown a tile of the Copernicus DEM  collection stored in <code class="docutils literal notranslate"><span class="pre">tif</span></code> format and labeled in <code class="docutils literal notranslate"><span class="pre">FLARE</span></code> dataset scheme</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>COPERNICUS_COPDEM_GLO30_DGTE_S030W051_20111008T182325.tif
+</pre></div>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-info" viewBox="0 0 16 16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg></span><span class="sd-summary-text">Example of a time series table labeling</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Here is shown a time series from station <code class="docutils literal notranslate"><span class="pre">A001</span></code> of the Brazilian Meteorological Institute
+in <code class="docutils literal notranslate"><span class="pre">txt</span></code> format and labeled in <code class="docutils literal notranslate"><span class="pre">FLARE</span></code> dataset scheme.
+Note that extension is considered obvious from the metadata.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>INMET_AUTO_A001_T0_0_2000U2020.txt
+</pre></div>
+</div>
+<p class="sd-card-text">The same data but aggregated over the monthly time step would be:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>INMET_AUTO_A001_T0-M_0_2000U2020.txt
+</pre></div>
+</div>
+<p class="sd-card-text">The same data but aggregated over the yearly time step would be:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>INMET_AUTO_A001_T0-Y_0_2000U2020.txt
+</pre></div>
+</div>
+</div>
+</details></section>
+</section>
+<section id="file-types-and-themes">
+<h2>File Types and Themes<a class="headerlink" href="#file-types-and-themes" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">FLARE</span></code> adopts and extends the <code class="docutils literal notranslate"><span class="pre">BibLaTeX</span></code> classification of entry types to support a unified
+taxonomy for labeling files. The goal is to provide a structured and interoperable set of
+“file themes” that align with bibliographic conventions while accommodating operational,
+administrative, and research-oriented assets that fall outside the classical bibliographic scope.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Check out <code class="docutils literal notranslate"><span class="pre">BibLaTeX</span></code> documentation at <a class="reference external" href="https://ctan.org/pkg/biblatex">https://ctan.org/pkg/biblatex</a></p>
+</div>
+<p>The taxonomy is divided into two groups:</p>
+<ol class="arabic simple">
+<li><p><strong>Bibliographic File Types</strong>
+Directly compatible with standard <code class="docutils literal notranslate"><span class="pre">BibLaTeX</span></code> entry types.</p></li>
+<li><p><strong>Extended File Types</strong>
+Additional categories introduced by <code class="docutils literal notranslate"><span class="pre">FLARE</span></code>.
+Most of these map to <code class="docutils literal notranslate"><span class="pre">misc</span></code> in <code class="docutils literal notranslate"><span class="pre">BibLaTeX</span></code> unless otherwise specified.</p></li>
+</ol>
+<p>This structure allows FLARE labels to be both semantically expressive and compatible with citation
+workflows when needed.</p>
+<section id="bibliographic-file-types">
+<h3>Bibliographic File Types<a class="headerlink" href="#bibliographic-file-types" title="Link to this heading">#</a></h3>
+<p>These categories correspond directly to commonly used <code class="docutils literal notranslate"><span class="pre">BibLaTeX</span></code> entry types:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Abstract</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">report</span></code></p></td>
+<td><p>Technical or institutional reports.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">article</span></code></p></td>
+<td><p>Journal or magazine articles.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">inproceedings</span></code></p></td>
+<td><p>Conference proceedings papers.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">book</span></code></p></td>
+<td><p>Monographs, volumes, or edited books.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">legal</span></code></p></td>
+<td><p>Legal decisions, legislation summaries, legal opinions.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">legislation</span></code></p></td>
+<td><p>Formal legislative documents.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dataset</span></code></p></td>
+<td><p>Publications that are datasets in the bibliographic sense.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">thesis</span></code></p></td>
+<td><p>Academic theses and dissertations.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">manual</span></code></p></td>
+<td><p>User guides, specifications, operational manuals.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">misc</span></code></p></td>
+<td><p>Generic documents that do not fit a more specific class.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="extended-file-types">
+<h3>Extended File Types<a class="headerlink" href="#extended-file-types" title="Link to this heading">#</a></h3>
+<p>These categories expand the <code class="docutils literal notranslate"><span class="pre">BibLaTeX</span></code> model to accommodate operational, administrative,
+and research documentation. Unless otherwise stated, these are represented as <code class="docutils literal notranslate"><span class="pre">misc</span></code> in
+<code class="docutils literal notranslate"><span class="pre">BibLaTeX</span></code>.</p>
+<section id="accounting">
+<h4>Accounting<a class="headerlink" href="#accounting" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Abstract</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">statement</span></code></p></td>
+<td><p>Bank account statements and financial extracts.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">invoice</span></code></p></td>
+<td><p>Invoices and billing documents.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">receipt</span></code></p></td>
+<td><p>Payment receipts and declarations.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fiscal</span></code></p></td>
+<td><p>Fiscal documents, tax declarations, and revenue records.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">proof</span></code></p></td>
+<td><p>Proof-of-payment documents.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="administrative">
+<h4>Administrative<a class="headerlink" href="#administrative" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Abstract</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">contract</span></code></p></td>
+<td><p>Legal or informal agreements. Maps to <code class="docutils literal notranslate"><span class="pre">legal</span></code> in <code class="docutils literal notranslate"><span class="pre">BibLaTeX</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">proposal</span></code></p></td>
+<td><p>Technical or commercial proposals. Maps to <code class="docutils literal notranslate"><span class="pre">legal</span></code> in <code class="docutils literal notranslate"><span class="pre">BibLaTeX</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">paperwork</span></code></p></td>
+<td><p>General administrative documentation. Maps to <code class="docutils literal notranslate"><span class="pre">misc</span></code> in <code class="docutils literal notranslate"><span class="pre">BibLaTeX</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ticket</span></code></p></td>
+<td><p>Transfer and flight tickets, or service tickets. Maps to <code class="docutils literal notranslate"><span class="pre">misc</span></code> in <code class="docutils literal notranslate"><span class="pre">BibLaTeX</span></code>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="research-and-academic">
+<h4>Research and Academic<a class="headerlink" href="#research-and-academic" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Abstract</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">poster</span></code></p></td>
+<td><p>Research posters, infographics, and academic displays. Maps to <code class="docutils literal notranslate"><span class="pre">inproceedings</span></code> in <code class="docutils literal notranslate"><span class="pre">BibLaTeX</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">presentation</span></code></p></td>
+<td><p>Slide decks and conference presentations. Maps to <code class="docutils literal notranslate"><span class="pre">misc</span></code> in <code class="docutils literal notranslate"><span class="pre">BibLaTeX</span></code>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>CONTINUE HERE <code class="docutils literal notranslate"><span class="pre">FLARE</span></code> continues to support extension of this taxonomy.
+You may add new file themes under the appropriate group or introduce new groups as project needs evolve.</p>
+</div>
+</section>
+</section>
+</section>
+<section id="file-categories">
+<span id="files-categories"></span><h2>File Categories<a class="headerlink" href="#file-categories" title="Link to this heading">#</a></h2>
+<section id="documents">
+<span id="files-documents"></span><h3>Documents<a class="headerlink" href="#documents" title="Link to this heading">#</a></h3>
+<p>Documents represent a broad class of files whose primary purpose is to organize and communicate human-readable information.
+They range from reflowable digital publications to structured, fully editable office documents.
+In the <code class="docutils literal notranslate"><span class="pre">FLARE</span></code> labeling system, document extensions play a critical role because they determine whether the content
+is static (e.g., <code class="docutils literal notranslate"><span class="pre">.pdf</span></code>) or editable (e.g., <code class="docutils literal notranslate"><span class="pre">.docx</span></code>, <code class="docutils literal notranslate"><span class="pre">.odt</span></code>, <code class="docutils literal notranslate"><span class="pre">.xlsx</span></code>), as well as the underlying format
+family (Open XML, OpenDocument Format, EPUB, etc.).</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 15.0%" />
+<col style="width: 35.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Extension</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Abstract</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pdf</span></code></p></td>
+<td><p>Portable Document Format</p></td>
+<td><p>Non-editable or semi-editable fixed-layout document format designed for reliable rendering across platforms; commonly used for reports, publications, and finalized documents.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">epub</span></code></p></td>
+<td><p>Electronic Publication</p></td>
+<td><p>Reflowable digital book format based on XHTML/CSS; widely used for long-form content such as books and manuals.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">svg</span></code></p></td>
+<td><p>Scalable Vector Graphics</p></td>
+<td><p>XML-based vector format for diagrams, illustrations, and technical graphics; resolution-independent and editable in text or vector editors.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ai</span></code></p></td>
+<td><p>Adobe Illustrator Artwork</p></td>
+<td><p>Proprietary vector-graphics format used for illustrations, logos, and design assets; supports layers, paths, and advanced styling.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">docx</span></code></p></td>
+<td><p>Microsoft Word Document (Open XML)</p></td>
+<td><p>Editable, structured word-processing file format supporting text, styles, embedded media, and revision history.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">odt</span></code></p></td>
+<td><p>OpenDocument Text</p></td>
+<td><p>Open-standard, editable word-processing format native to LibreOffice and other ODF-compatible editors.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">xlsx</span></code></p></td>
+<td><p>Microsoft Excel Workbook (Open XML)</p></td>
+<td><p>Editable spreadsheet format using tabular structures, formulas, chart definitions, and embedded metadata.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ods</span></code></p></td>
+<td><p>OpenDocument Spreadsheet</p></td>
+<td><p>Open-standard spreadsheet format used by LibreOffice; supports formulas, styles, and structured data.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pptx</span></code></p></td>
+<td><p>Microsoft PowerPoint Presentation (Open XML)</p></td>
+<td><p>Editable slide-based presentation format supporting layouts, animations, embedded media, and templates.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">odp</span></code></p></td>
+<td><p>OpenDocument Presentation</p></td>
+<td><p>Open-standard presentation format used by LibreOffice; compatible with open-source office environments.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="images">
+<span id="files-images"></span><h3>Images<a class="headerlink" href="#images" title="Link to this heading">#</a></h3>
+<p>Images encompass raster files whose primary purpose is to represent visual or spatial information in a pixel-based structure.
+Depending on the format, images may be optimized for human perception (photographs, graphics) or for analytical processing (scientific rasters, georeferenced grids).
+The presence and richness of metadata—such as EXIF tags or geospatial references—significantly affect how such files should be labeled and managed in the <code class="docutils literal notranslate"><span class="pre">FLARE</span></code> system.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 15.0%" />
+<col style="width: 35.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Extension</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Abstract</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">jpg</span></code></p></td>
+<td><p>Joint Photographic Experts Group Short Variant</p></td>
+<td><p>Lossy-compressed raster image format widely used for photographs; supports EXIF metadata such as timestamps, camera parameters, and geolocation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">png</span></code></p></td>
+<td><p>Portable Network Graphics</p></td>
+<td><p>Lossless raster image format supporting transparency (alpha channels); commonly used for diagrams, web graphics, and high-quality figures.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gif</span></code></p></td>
+<td><p>Graphics Interchange Format</p></td>
+<td><p>Indexed-color raster format supporting simple animation; limited color depth but efficient for small graphical assets.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">tif</span></code></p></td>
+<td><p>Tagged Image File Format</p></td>
+<td><p>Flexible raster container supporting multiple compression schemes; includes metadata tags and is common in professional imaging and scientific datasets.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">bmp</span></code></p></td>
+<td><p>Bitmap Image</p></td>
+<td><p>Uncompressed raster format with simple structure; primarily encountered in legacy systems or specialized workflows.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">webp</span></code></p></td>
+<td><p>WebP Image</p></td>
+<td><p>Modern image format supporting both lossy and lossless compression, animations, and alpha channels; optimized for web delivery.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="datasets">
+<span id="files-datasets"></span><h3>Datasets<a class="headerlink" href="#datasets" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 15.0%" />
+<col style="width: 35.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Extension</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Abstract</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">csv</span></code></p></td>
+<td><p>Comma-Separated Values</p></td>
+<td><p>Plain-text tabular data format with delimited fields; widely used for interoperability but limited metadata support.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">txt</span></code></p></td>
+<td><p>Tabular Text File</p></td>
+<td><p>Plain-text dataset encoded with tab or custom delimiters; flexible but with no native schema or typing.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">geojson</span></code></p></td>
+<td><p>GeoJSON</p></td>
+<td><p>JSON-based format for geospatial vector data; supports geometries, properties, and coordinate reference metadata.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">xml</span></code></p></td>
+<td><p>Extensible Markup Language</p></td>
+<td><p>Hierarchical markup for structured data interchange; widely used in configuration, metadata, and document formats.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">parquet</span></code></p></td>
+<td><p>Apache Parquet</p></td>
+<td><p>Columnar, compressed dataset format optimized for analytical workloads; supports schema evolution and efficient querying.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">nc</span></code></p></td>
+<td><p>NetCDF</p></td>
+<td><p>Multidimensional scientific data format with extensive metadata capabilities; used for atmospheric, oceanographic, and raster datasets.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">tif</span></code></p></td>
+<td><p>GeoTIFF Raster Dataset</p></td>
+<td><p>Georeferenced raster format embedding coordinate reference systems and geospatial metadata; simultaneously an Image and Dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">gpkg</span></code></p></td>
+<td><p>GeoPackage</p></td>
+<td><p>SQLite-based, open-standard geospatial dataset container storing vector layers, raster tiles, and metadata in a single file.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">shp</span></code></p></td>
+<td><p>ESRI Shapefile</p></td>
+<td><p>Legacy geospatial vector format requiring multiple companion files; stores geometries and attribute tables.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">kml</span></code></p></td>
+<td><p>Keyhole Markup Language</p></td>
+<td><p>XML-based geospatial vector format used for map features, paths, and annotations; commonly used in web mapping and Google Earth.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sqlite</span></code></p></td>
+<td><p>SQLite Database</p></td>
+<td><p>File-based relational database storing tables, indexes, and arbitrary data structures; used for embedded or small-scale data storage.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="markup">
+<span id="files-markup"></span><h3>Markup<a class="headerlink" href="#markup" title="Link to this heading">#</a></h3>
+<p>Markup files define structure, formatting rules, or semantic annotations for text-based artifacts.
+They are human-readable, usually plain text, and frequently used for documentation, web content, data serialization,
+or academic references. Although they contain no executable logic, they often support rich rendering pipelines
+and metadata systems that influence downstream applications.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 15.0%" />
+<col style="width: 35.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Extension</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Abstract</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">md</span></code></p></td>
+<td><p>Markdown Document</p></td>
+<td><p>Lightweight markup for structured text; commonly used for README files, documentation, and content pipelines.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">rst</span></code></p></td>
+<td><p>reStructuredText</p></td>
+<td><p>Rich, extensible markup for technical documentation; native format for Sphinx (Python library).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">tex</span></code></p></td>
+<td><p>TeX File</p></td>
+<td><p>Typesetting language used for scientific papers, reports, books, and mathematical documents.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">bib</span></code></p></td>
+<td><p>BibTeX Bibliography</p></td>
+<td><p>Plain-text structured references used in LaTeX ecosystems; stores citations and bibliographic metadata.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">html</span></code></p></td>
+<td><p>HyperText Markup Language</p></td>
+<td><p>Defines the structure and presentation of web documents; rendered by browsers and supports multimedia embedding.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">xml</span></code></p></td>
+<td><p>Extensible Markup Language</p></td>
+<td><p>Hierarchical markup for structured data interchange; widely used in configuration, metadata, and document formats.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">json</span></code></p></td>
+<td><p>JavaScript Object Notation</p></td>
+<td><p>Human-readable structured data interchange format supporting nested objects and arrays; suitable for hierarchical datasets.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">yaml</span></code></p></td>
+<td><p>Yet Another Markup Language</p></td>
+<td><p>Human-friendly configuration format using indentation for structure; used in workflows, orchestration, and settings.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">toml</span></code></p></td>
+<td><p>Tom’s Obvious, Minimal Language</p></td>
+<td><p>Strongly typed, minimal configuration format used in packaging, environments, and application metadata.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="source-code">
+<span id="files-code"></span><h3>Source Code<a class="headerlink" href="#source-code" title="Link to this heading">#</a></h3>
+<p>Source code files contain executable instructions written in programming or scripting languages.
+They express computational logic, automation routines, workflows, or analytical steps.
+Although typically stored as plain text, their semantics depend on interpreters, compilers, and runtime environments.
+These file are “active” assets: they initiate behavior, transformations, or computations when executed.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 15.0%" />
+<col style="width: 35.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Extension</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Abstract</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">py</span></code></p></td>
+<td><p>Python File</p></td>
+<td><p>Script or module executed by the Python interpreter for automation, analysis, or application logic.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ipynb</span></code></p></td>
+<td><p>Jupyter Notebook</p></td>
+<td><p>Interactive document mixing code, outputs, and metadata; used for exploratory computing.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sh</span></code></p></td>
+<td><p>Shell Script</p></td>
+<td><p>Unix shell commands for automation and environment setup, executed by Bash or related shells.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">bat</span></code></p></td>
+<td><p>Windows Batch Script</p></td>
+<td><p>Command script for Windows environments; used for automation, file operations, and workflows.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">js</span></code></p></td>
+<td><p>JavaScript File</p></td>
+<td><p>Script executed by browsers or Node.js; used for web applications or automation.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
 </section>
 
 
@@ -479,6 +1126,41 @@
                 <dialog id="pst-secondary-sidebar-modal"></dialog>
                 <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labeling-schemes">Labeling Schemes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generic-scheme">Generic Scheme</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reference-scheme">Reference Scheme</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-scheme">Dataset Scheme</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-types-and-themes">File Types and Themes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliographic-file-types">Bibliographic File Types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extended-file-types">Extended File Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#accounting">Accounting</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#administrative">Administrative</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#research-and-academic">Research and Academic</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-categories">File Categories</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#documents">Documents</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#images">Images</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datasets">Datasets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#markup">Markup</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#source-code">Source Code</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
   <div role="note" aria-label="source link">

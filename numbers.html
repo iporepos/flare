@@ -364,6 +364,7 @@
 <li class="toctree-l1"><a class="reference internal" href="flags.html">Literal Flags</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Numbers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datetime.html">Date and Time</a></li>
+<li class="toctree-l1"><a class="reference internal" href="versions.html">Versions</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="names.html">Names</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="metadata.html">Metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="statistics.html">Statistics</a></li>
@@ -436,7 +437,7 @@
   <section id="numbers">
 <span id="id1"></span><h1>Numbers<a class="headerlink" href="#numbers" title="Link to this heading">#</a></h1>
 <p>Numbers are a core component, since they are present in nearly every type of label.
-<code class="docutils literal notranslate"><span class="pre">FLARE</span></code> provides a structured approach to encoding <strong>integer numbers, real numbers, signals, and magnitude multipliers</strong>.
+<code class="docutils literal notranslate"><span class="pre">FLARE</span></code> provides a structured approach to encoding <strong>integer numbers, real numbers, sign and magnitude multipliers</strong>.
 Each type has a specific role and format within a label.</p>
 <section id="summary">
 <span id="numbers-summary"></span><h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
@@ -511,9 +512,9 @@ This avoids issues where, for example, <code class="docutils literal notranslate
 </div>
 </div>
 </details></section>
-<section id="fractions">
-<span id="numbers-fractions"></span><h2>Fractions<a class="headerlink" href="#fractions" title="Link to this heading">#</a></h2>
-<p>Real numbers extend the integer format by allowing <strong>decimal fractions</strong>.
+<section id="real-numbers">
+<span id="numbers-real"></span><h2>Real numbers<a class="headerlink" href="#real-numbers" title="Link to this heading">#</a></h2>
+<p>Real numbers extend the integer format by allowing <strong>decimal plates</strong>.
 Because certain characters, like the period <code class="docutils literal notranslate"><span class="pre">.</span></code>, are prohibited in labels,
 <code class="docutils literal notranslate"><span class="pre">FLARE</span></code> uses the letter <code class="docutils literal notranslate"><span class="pre">p</span></code> as a decimal separator.
 This allows precise numerical values to be encoded without violating the text-only principle.</p>
@@ -795,7 +796,7 @@ This allows precise numerical values to be encoded without violating the text-on
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integers">Integers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fractions">Fractions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#real-numbers">Real numbers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sign">Sign</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#magnitude">Magnitude</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#literal-flags">Literal Flags</a></li>

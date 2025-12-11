@@ -63,7 +63,7 @@ The core attributes set is given in the table below:
 
 .. _names-metadata:
 
-Names for Metadata
+Metadata
 ============================================
 
 Metadata names are standard names given to properties of an asset.
@@ -88,7 +88,7 @@ Metadata names spam across a range of themes, depending on the kind of data it r
 
 .. _names-stats:
 
-Names for Statistics
+Statistics
 ============================================
 
 Statistics names are standard names given to typical statistical measures derived from quantitative data.
@@ -113,7 +113,7 @@ hypothesis testing.
 
 .. _names-variables:
 
-Names for Thematic Variables
+Thematic Variables
 ============================================
 
 Thematic variables are found in scientific and technical contexts.
@@ -170,7 +170,7 @@ Names for thematic variables include extra attributes, like *units* and *data-ty
 
 .. _names-programming-vars:
 
-Names for Code Variables
+Code Variables
 ============================================
 
 Code variables,

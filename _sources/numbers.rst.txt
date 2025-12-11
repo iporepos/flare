@@ -4,7 +4,7 @@ Numbers
 ############################################
 
 Numbers are a core component, since they are present in nearly every type of label.
-``FLARE`` provides a structured approach to encoding **integer numbers, real numbers, signals, and magnitude multipliers**.
+``FLARE`` provides a structured approach to encoding **integer numbers, real numbers, sign and magnitude multipliers**.
 Each type has a specific role and format within a label.
 
 .. _numbers-summary:
@@ -64,12 +64,12 @@ This avoids issues where, for example, ``2`` would otherwise appear after ``20``
          - :math:`+ 1223`
 
 
-.. _numbers-fractions:
+.. _numbers-real:
 
-Fractions
+Real numbers
 ============================================
 
-Real numbers extend the integer format by allowing **decimal fractions**.
+Real numbers extend the integer format by allowing **decimal plates**.
 Because certain characters, like the period ``.``, are prohibited in labels,
 ``FLARE`` uses the letter ``p`` as a decimal separator.
 This allows precise numerical values to be encoded without violating the text-only principle.

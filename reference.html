@@ -363,6 +363,7 @@
 <li class="toctree-l1"><a class="reference internal" href="flags.html">Literal Flags</a></li>
 <li class="toctree-l1"><a class="reference internal" href="numbers.html">Numbers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datetime.html">Date and Time</a></li>
+<li class="toctree-l1"><a class="reference internal" href="versions.html">Versions</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="names.html">Names</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="metadata.html">Metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="statistics.html">Statistics</a></li>
@@ -438,6 +439,7 @@
 <li class="toctree-l1"><a class="reference internal" href="flags.html">Literal Flags</a></li>
 <li class="toctree-l1"><a class="reference internal" href="numbers.html">Numbers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datetime.html">Date and Time</a></li>
+<li class="toctree-l1"><a class="reference internal" href="versions.html">Versions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="names.html">Names</a></li>
 <li class="toctree-l1"><a class="reference internal" href="files.html">Files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fields.html">Fields</a></li>
@@ -479,23 +481,27 @@
 <td><p>Label component. Temporal encodings used to represent instants or intervals.</p></td>
 <td><p>Two domains: <em>timestamp</em> (exact time) and <em>epoch</em> (named or structured periods); standardized YYYYMMDD… formats.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#reference-names"><span class="std std-ref">Names</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#reference-versions"><span class="std std-ref">Versions</span></a></p></td>
+<td><p>Label component. Standardized versioning notation.</p></td>
+<td><p>Includes options like semantic versioning and timestamp versioning.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#reference-names"><span class="std std-ref">Names</span></a></p></td>
 <td><p>Label component. Standardized vocabulary for variables, statistics, domains, and common descriptors.</p></td>
 <td><p>Includes long and short forms; reduces ambiguity and improves consistency across assets.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#reference-assets"><span class="std std-ref">Assets</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#reference-assets"><span class="std std-ref">Assets</span></a></p></td>
 <td><p>Anything that can be labeled.</p></td>
 <td><p>Includes Files, Fields and Layers; each governed by specific constraints on notation, extensions, and allowed characters.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#reference-files"><span class="std std-ref">Files</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#reference-files"><span class="std std-ref">Files</span></a></p></td>
 <td><p>Assets stored in the filesystem, often with an extension.</p></td>
 <td><p>Flexible format; extensions allowed; hyphens and subdomains permitted; suitable for descriptive, long-form labels.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#reference-fields"><span class="std std-ref">Fields</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#reference-fields"><span class="std std-ref">Fields</span></a></p></td>
 <td><p>Asset. Columns in tables, datasets, or databases.</p></td>
 <td><p>Strict notation: ASCII letters, digits, underscores only; hyphens prohibited; optimized for database compatibility.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#reference-layers"><span class="std std-ref">Layers</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#reference-layers"><span class="std std-ref">Layers</span></a></p></td>
 <td><p>Asset. Intermediate structured assets (e.g., GIS layers, document sections, database tables, drawing layers).</p></td>
 <td><p>No extensions; hyphens discouraged; plain ASCII tokenization.</p></td>
 </tr>
@@ -617,6 +623,16 @@ To cover different use cases, <code class="docutils literal notranslate"><span c
 </details><div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p>Get more details on <a class="reference internal" href="datetime.html#datetime"><span class="std std-ref">Date and Time</span></a> documentation page.</p>
+</div>
+</section>
+<section id="versions">
+<span id="reference-versions"></span><h3>Versions<a class="headerlink" href="#versions" title="Link to this heading">#</a></h3>
+<p>Version schemes must be deterministic, machine-readable, and easy to compare.
+To accommodate different operational contexts, <code class="docutils literal notranslate"><span class="pre">FLARE</span></code> standardizes three complementary versioning schemes:
+semantic versioning, compact semantic versioning, and timestamp-based versioning.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Get more details on <a class="reference internal" href="versions.html#versions"><span class="std std-ref">Versions</span></a> documentation page.</p>
 </div>
 </section>
 <section id="standard-names">
@@ -753,6 +769,7 @@ Their labels must remain plain, unambiguous, and strictly ASCII-based.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#literal-flags">Literal Flags</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numbers">Numbers</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#date-and-time">Date and Time</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#versions">Versions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-names">Standard Names</a></li>
 </ul>
 </li>
