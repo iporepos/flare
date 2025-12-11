@@ -8,7 +8,7 @@ These principles ensure that labels are **robust, consistent, human-readable, an
 
 .. seealso::
 
-    Check out the :ref:`Concepts <concepts>` page for practical details.
+    Check out the :ref:`Reference <reference>` page for all technical details.
 
 
 .. _principles-summary:

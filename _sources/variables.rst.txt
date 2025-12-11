@@ -1,10 +1,6 @@
-.. _files:
+.. _variables:
 
-.. note::
-
-    This page is being developed.
-
-Files
+Thematic Variables
 ############################################
 
 .. include:: ./includes/ipsum.rst

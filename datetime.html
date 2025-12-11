@@ -118,8 +118,8 @@
     
     
     
-    <img src="https://github.com/iporepos/flare/blob/main/docs/figs/logo.png?raw=true" class="logo__image only-light" alt="flare 0.0.1 documentation - Home"/>
-    <img src="https://github.com/iporepos/flare/blob/main/docs/figs/logo.png?raw=true" class="logo__image only-dark pst-js-only" alt="flare 0.0.1 documentation - Home"/>
+    <img src="_static/logo.png" class="logo__image only-light" alt="flare 0.0.1 documentation - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="flare 0.0.1 documentation - Home"/>
   
   
 </a></div>
@@ -149,15 +149,15 @@
 
 
 <li class="nav-item current active">
-  <a class="nav-link nav-internal" href="concepts.html">
-    Concepts
+  <a class="nav-link nav-internal" href="reference.html">
+    Reference
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="usage.html">
-    Usage
+  <a class="nav-link nav-internal" href="guide.html">
+    Guide
   </a>
 </li>
 
@@ -289,15 +289,15 @@
 
 
 <li class="nav-item current active">
-  <a class="nav-link nav-internal" href="concepts.html">
-    Concepts
+  <a class="nav-link nav-internal" href="reference.html">
+    Reference
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="usage.html">
-    Usage
+  <a class="nav-link nav-internal" href="guide.html">
+    Guide
   </a>
 </li>
 
@@ -359,12 +359,19 @@
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="flags.html">Literal Flags</a></li>
 <li class="toctree-l1"><a class="reference internal" href="numbers.html">Numbers</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Date and Time</a></li>
-<li class="toctree-l1"><a class="reference internal" href="names.html">Names</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="names.html">Names</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="metadata.html">Metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics.html">Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html">Thematic Variables</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="files.html">Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fields.html">Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layers.html">Layers</a></li>
 </ul>
 </div>
 </nav></div>
@@ -406,7 +413,7 @@
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="concepts.html" class="nav-link">Concepts</a></li>
+    <li class="breadcrumb-item"><a href="reference.html" class="nav-link">Reference</a></li>
     
     <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Date and Time</span></li>
   </ul>
@@ -690,34 +697,28 @@ The flag for separator is the <code class="docutils literal notranslate"><span c
 <section id="literal-flags">
 <span id="datetime-flags"></span><h2>Literal Flags<a class="headerlink" href="#literal-flags" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table">
-<colgroup>
-<col style="width: 15.0%" />
-<col style="width: 25.0%" />
-<col style="width: 25.0%" />
-<col style="width: 35.0%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Flag</p></th>
 <th class="head"><p>Domain</p></th>
 <th class="head"><p>Subdomain</p></th>
-<th class="head"><p>Meaning</p></th>
+<th class="head"><p>Abstract</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">t</span></code></p></td>
-<td><p>Timestamp</p></td>
+<td><p>Datetime</p></td>
 <td><p>Time</p></td>
-<td><p>Prefix for time notation</p></td>
+<td><p>Prefix for time</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">z</span></code></p></td>
-<td><p>Timestamp</p></td>
+<td><p>Datetime</p></td>
 <td><p>Zone</p></td>
-<td><p>Prefix for zone notation</p></td>
+<td><p>Prefix for zone</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">u</span></code></p></td>
+<td><p>Datetime</p></td>
 <td><p>Epoch</p></td>
-<td><p>Stop</p></td>
-<td><p>Separator of timestamps</p></td>
+<td><p>Prefix for stop timestamp</p></td>
 </tr>
 </tbody>
 </table>

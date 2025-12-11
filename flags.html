@@ -50,7 +50,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Numbers" href="numbers.html" />
-    <link rel="prev" title="Concepts" href="concepts.html" />
+    <link rel="prev" title="Reference" href="reference.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -117,8 +117,8 @@
     
     
     
-    <img src="https://github.com/iporepos/flare/blob/main/docs/figs/logo.png?raw=true" class="logo__image only-light" alt="flare 0.0.1 documentation - Home"/>
-    <img src="https://github.com/iporepos/flare/blob/main/docs/figs/logo.png?raw=true" class="logo__image only-dark pst-js-only" alt="flare 0.0.1 documentation - Home"/>
+    <img src="_static/logo.png" class="logo__image only-light" alt="flare 0.0.1 documentation - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="flare 0.0.1 documentation - Home"/>
   
   
 </a></div>
@@ -148,15 +148,15 @@
 
 
 <li class="nav-item current active">
-  <a class="nav-link nav-internal" href="concepts.html">
-    Concepts
+  <a class="nav-link nav-internal" href="reference.html">
+    Reference
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="usage.html">
-    Usage
+  <a class="nav-link nav-internal" href="guide.html">
+    Guide
   </a>
 </li>
 
@@ -288,15 +288,15 @@
 
 
 <li class="nav-item current active">
-  <a class="nav-link nav-internal" href="concepts.html">
-    Concepts
+  <a class="nav-link nav-internal" href="reference.html">
+    Reference
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="usage.html">
-    Usage
+  <a class="nav-link nav-internal" href="guide.html">
+    Guide
   </a>
 </li>
 
@@ -358,12 +358,19 @@
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Literal Flags</a></li>
 <li class="toctree-l1"><a class="reference internal" href="numbers.html">Numbers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datetime.html">Date and Time</a></li>
-<li class="toctree-l1"><a class="reference internal" href="names.html">Names</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="names.html">Names</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="metadata.html">Metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics.html">Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html">Thematic Variables</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="files.html">Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fields.html">Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layers.html">Layers</a></li>
 </ul>
 </div>
 </nav></div>
@@ -405,7 +412,7 @@
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="concepts.html" class="nav-link">Concepts</a></li>
+    <li class="breadcrumb-item"><a href="reference.html" class="nav-link">Reference</a></li>
     
     <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Literal Flags</span></li>
   </ul>
@@ -437,7 +444,7 @@
 </div>
 </details><section id="separators">
 <span id="flags-separators"></span><h2>Separators<a class="headerlink" href="#separators" title="Link to this heading">#</a></h2>
-<p>As mentioned in <a class="reference internal" href="concepts.html#concepts-labels"><span class="std std-ref">Concepts</span></a>, separators are flags that give the label structure.</p>
+<p>Separators are flags that give the label structure.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-code" viewBox="0 0 16 16" aria-hidden="true"><path d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215Zm-6.56 0a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"></path></svg></span><span class="sd-summary-text">Example of separators</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
@@ -472,7 +479,7 @@ flag encoding decimal separator.</p>
 <p class="admonition-title">Important</p>
 <p>Disambiguating Replacers and Domain Flags</p>
 <p>Replacers always appear <strong>alone</strong> within a domain. Although they may resemble
-other Domain Flags, their distinguishing feature is that they occur
+other Domain Flags and Thematic Variables, their distinguishing feature is that they occur
 by themselves between underscores. This pattern is the indicator that the
 element is a replacer.</p>
 </div>
@@ -486,7 +493,7 @@ element is a replacer.</p>
 </section>
 <section id="not-apply">
 <span id="flags-replacers-na"></span><h3>Not-apply<a class="headerlink" href="#not-apply" title="Link to this heading">#</a></h3>
-<p>The flag <code class="docutils literal notranslate"><span class="pre">n</span></code> is a replacer for any domain in a label that somehow not apply, like an exception to the rule.</p>
+<p>The flag <code class="docutils literal notranslate"><span class="pre">na</span></code> is a replacer for any domain in a label that somehow not apply, like an exception to the rule.</p>
 </section>
 <section id="obvious">
 <span id="flags-replacers-obvious"></span><h3>Obvious<a class="headerlink" href="#obvious" title="Link to this heading">#</a></h3>
@@ -503,17 +510,17 @@ It’s the lazy option for not filling everything. Use with caution.</p>
 <tr class="row-odd"><th class="head"><p>Flag</p></th>
 <th class="head"><p>Domain</p></th>
 <th class="head"><p>Subdomain</p></th>
-<th class="head"><p>Meaning</p></th>
+<th class="head"><p>Abstract</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">_</span></code></p></td>
-<td><p>x</p></td>
+<td><p>Separator</p></td>
 <td><p>x</p></td>
 <td><p>Domain separator</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
-<td><p>x</p></td>
+<td><p>Separator</p></td>
 <td><p>x</p></td>
 <td><p>Subdomain separator</p></td>
 </tr>
@@ -522,7 +529,7 @@ It’s the lazy option for not filling everything. Use with caution.</p>
 <td><p>x</p></td>
 <td><p>Replacer for obvious information</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">n</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">na</span></code></p></td>
 <td><p>Replacer</p></td>
 <td><p>x</p></td>
 <td><p>Replacer for not-apply</p></td>
@@ -535,7 +542,7 @@ It’s the lazy option for not filling everything. Use with caution.</p>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">z</span></code></p></td>
 <td><p>Replacer</p></td>
 <td><p>x</p></td>
-<td><p>Replacer for unknown information</p></td>
+<td><p>Replacer for unknown</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">p</span></code></p></td>
 <td><p>Number</p></td>
@@ -588,18 +595,18 @@ It’s the lazy option for not filling everything. Use with caution.</p>
 <td><p>Suffix for billions multiplier (x1,000,000,000)</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">t</span></code></p></td>
-<td><p>Timestamp</p></td>
+<td><p>Datetime</p></td>
 <td><p>Time</p></td>
 <td><p>Prefix for time</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">z</span></code></p></td>
-<td><p>Timestamp</p></td>
+<td><p>Datetime</p></td>
 <td><p>Zone</p></td>
 <td><p>Prefix for zone</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">u</span></code></p></td>
+<td><p>Datetime</p></td>
 <td><p>Epoch</p></td>
-<td><p>Stop</p></td>
 <td><p>Prefix for stop timestamp</p></td>
 </tr>
 </tbody>
@@ -619,12 +626,12 @@ It’s the lazy option for not filling everything. Use with caution.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="concepts.html"
+       href="reference.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Concepts</p>
+        <p class="prev-next-title">Reference</p>
       </div>
     </a>
     <a class="right-next"

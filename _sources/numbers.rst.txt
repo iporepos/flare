@@ -57,11 +57,11 @@ This avoids issues where, for example, ``2`` would otherwise appear after ``20``
        * - Encoded
          - Decoded
        * - ``00002``
-         - 2
+         - :math:`+ 2`
        * - ``00020``
-         - 20
+         - :math:`+ 20`
        * - ``01223``
-         - 1223
+         - :math:`+ 1223`
 
 
 .. _numbers-fractions:
@@ -88,11 +88,11 @@ This allows precise numerical values to be encoded without violating the text-on
        * - Encoded
          - Decoded
        * - ``002p3``
-         - 2.3
+         - :math:`+ 2.3`
        * - ``023p4``
-         - 23.4
+         - :math:`+ 23.4`
        * - ``125p0``
-         - 125.0
+         - :math:`+ 125.0`
 
 
 .. _numbers-sign:
@@ -135,11 +135,11 @@ By default, ``FLARE`` assumes the sign of a number is **positive**. But in some 
        * - Encoded
          - Decoded
        * - ``S002p3``
-         - -2.3
+         - :math:`- 2.3`
        * - ``N023p4``
-         - +23.4
+         - :math:`+ 23.4`
        * - ``w125p0``
-         - -125.0
+         - :math:`- 125.0`
 
 .. _numbers-magnitude:
 
@@ -179,62 +179,19 @@ By default, ``FLARE`` assumes the multiplier of a number is 1. Sometimes, it is 
        * - Encoded
          - Decoded
        * - ``02p3k``
-         - 2,300.0
+         - :math:`+ 2,300.0`
        * - ``23p44c``
-         - 2,344.0
+         - :math:`+ 2,344.0`
        * - ``W05P0M``
-         - -5,000,000.0
+         - :math:`- 5,000,000.0`
 
 .. _numbers-flags:
 
 Literal Flags
 ============================================
 
-.. list-table::
-   :widths: 10 30 30 30
-   :header-rows: 1
-
-   * - Flag
-     - Domain
-     - Subdomain
-     - Meaning
-   * - ``p``
-     - Number
-     - Fraction
-     - Decimal separator
-   * - ``w``
-     - Number
-     - Sign
-     - flag for negative sign or West quadrant
-   * - ``s``
-     - Number
-     - Sign
-     - flag for negative sign or South quadrant
-   * - ``e``
-     - Number
-     - Sign
-     - flag for positive sign or East quadrant
-   * - ``n``
-     - Number
-     - Sign
-     - flag for positive sign or North quadrant
-   * - ``d``
-     - Number
-     - Magnitude
-     - Tens multiplier (x10)
-   * - ``c``
-     - Number
-     - Magnitude
-     - Hundreds multiplier (x100)
-   * - ``k``
-     - Number
-     - Magnitude
-     - Thousands multiplier (x1,000)
-   * - ``m``
-     - Number
-     - Magnitude
-     - Millions multiplier (x1,000,000)
-   * - ``b``
-     - Number
-     - Magnitude
-     - Billions multiplier (x1,000,000,000)
+.. csv-table::
+       :file: /data/flags_number.csv
+       :header-rows: 1
+       :widths: auto
+       :delim: ;

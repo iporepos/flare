@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Usage &#8212; flare 0.0.1 documentation</title>
+    <title>Thematic Variables &#8212; flare 0.0.1 documentation</title>
   
   
   
@@ -46,11 +46,11 @@
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'usage';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'variables';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="API" href="api.html" />
-    <link rel="prev" title="Files" href="files.html" />
+    <link rel="next" title="Files" href="files.html" />
+    <link rel="prev" title="Statistics" href="statistics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -117,8 +117,8 @@
     
     
     
-    <img src="https://github.com/iporepos/flare/blob/main/docs/figs/logo.png?raw=true" class="logo__image only-light" alt="flare 0.0.1 documentation - Home"/>
-    <img src="https://github.com/iporepos/flare/blob/main/docs/figs/logo.png?raw=true" class="logo__image only-dark pst-js-only" alt="flare 0.0.1 documentation - Home"/>
+    <img src="_static/logo.png" class="logo__image only-light" alt="flare 0.0.1 documentation - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="flare 0.0.1 documentation - Home"/>
   
   
 </a></div>
@@ -147,16 +147,16 @@
 </li>
 
 
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="concepts.html">
-    Concepts
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="reference.html">
+    Reference
   </a>
 </li>
 
 
-<li class="nav-item current active">
-  <a class="nav-link nav-internal" href="#">
-    Usage
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="guide.html">
+    Guide
   </a>
 </li>
 
@@ -287,16 +287,16 @@
 </li>
 
 
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="concepts.html">
-    Concepts
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="reference.html">
+    Reference
   </a>
 </li>
 
 
-<li class="nav-item current active">
-  <a class="nav-link nav-internal" href="#">
-    Usage
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="guide.html">
+    Guide
   </a>
 </li>
 
@@ -357,7 +357,22 @@
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"></div>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flags.html">Literal Flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numbers.html">Numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datetime.html">Date and Time</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="names.html">Names</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="metadata.html">Metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics.html">Statistics</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Thematic Variables</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="files.html">Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fields.html">Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layers.html">Layers</a></li>
+</ul>
+</div>
 </nav></div>
     </div>
   
@@ -396,7 +411,13 @@
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Usage</span></li>
+    
+    <li class="breadcrumb-item"><a href="reference.html" class="nav-link">Reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="names.html" class="nav-link">Names</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Thematic Variables</span></li>
   </ul>
 </nav>
 </div>
@@ -413,49 +434,9 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="usage">
-<span id="id1"></span><h1>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h1>
-<section id="overview">
-<span id="quickview"></span><h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
-<p>For casual users, the installation instructions allow quick setup and testing of basic functionality. Additional resources, including example Jupyter notebooks and live interactive versions, are available to explore features and usage patterns in detail.</p>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>For those who want to contribute, see <a class="reference internal" href="development.html#development"><span class="std std-ref">Development</span></a></p>
-</div>
-</section>
-<section id="installation">
-<span id="id2"></span><h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
-<p>For causal users, install <code class="docutils literal notranslate"><span class="pre">copyme</span></code> to a Python 3 environment via terminal:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python -m pip install git+https://github.com/iporepos/copyme.git@main</span>
-</pre></div>
-</div>
-</section>
-<section id="guides">
-<span id="id3"></span><h2>Guides<a class="headerlink" href="#guides" title="Link to this heading">#</a></h2>
-<p>For those seeking practical guidance on using the tools available in the repo, relevant resources are provided.</p>
-<p>Example Jupyter notebooks are available in the repository’s examples folder, along with live, interactive versions on platforms such as Google Colab. These resources illustrate the project’s features, demonstrate typical usage patterns, and allow experimentation with the functionality directly.</p>
-<section id="examples">
-<h3>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h3>
-<p>Develop examples here</p>
-<section id="a-basic-script">
-<h4>A basic script<a class="headerlink" href="#a-basic-script" title="Link to this heading">#</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">copyme</span><span class="w"> </span><span class="kn">import</span> <span class="n">module</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">num1</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">num2</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-<span class="c1"># [out]: 7</span>
-</pre></div>
-</div>
-</section>
-<section id="advanced-script">
-<h4>Advanced script<a class="headerlink" href="#advanced-script" title="Link to this heading">#</a></h4>
-<p>Develop examples here</p>
-</section>
-</section>
-</section>
+  <section id="thematic-variables">
+<span id="variables"></span><h1>Thematic Variables<a class="headerlink" href="#thematic-variables" title="Link to this heading">#</a></h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mollis tincidunt erat eget iaculis. Mauris gravida ex quam, in porttitor lacus lobortis vitae. In a lacinia nisl. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi et tempor sem. Nullam quam dolor, venenatis eget magna ut, accumsan mollis erat.</p>
 </section>
 
 
@@ -469,20 +450,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="files.html"
+       href="statistics.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Files</p>
+        <p class="prev-next-title">Statistics</p>
       </div>
     </a>
     <a class="right-next"
-       href="api.html"
+       href="files.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">API</p>
+        <p class="prev-next-title">Files</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -498,31 +479,10 @@
 
 
   <div class="sidebar-secondary-item">
-<div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-  </div>
-  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guides">Guides</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-basic-script">A basic script</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-script">Advanced script</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-  <div class="sidebar-secondary-item">
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/usage.rst.txt"
+      <li><a href="_sources/variables.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div></div>
